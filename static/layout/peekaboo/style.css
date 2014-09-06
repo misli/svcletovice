@@ -1,0 +1,17 @@
+/*
+Theme Name: Peekaboo
+Theme URI: http://themeforest.com/user/population2
+Description: A simple and clean vibrant looking theme for daycare, preschool, and other small businesses. It comes with gallery and custom backgrounds.
+Author: Population 2
+Author URI: http://themeforest.com/user/population2
+Version: 1.10
+
+License: Regular License
+License URI: http://themeforest.net/wiki/support/legal-terms/licensing-terms/
+
+*/
+
+@import "css/reset.css";
+@import "css/layout.css";
+@import "css/colorbox.css";
+@import "css/tipTip.css";

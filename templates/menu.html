@@ -1,0 +1,6 @@
+{% load menu_tags %}
+{% for child in children %}
+  <a class="{% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+    <span>{{ child.get_menu_title }}</span>
+  </a>
+{% endfor %}

@@ -1,0 +1,85 @@
+{% extends "default.html" %}
+{% load misli_tags sekizai_tags %}
+
+{% block title %}Přihláška na kroužky{% endblock %}
+
+{% block description %}Přihláška na kroužky SVČ Letokruh (Letovice){% endblock %}
+
+{% block base_content %}
+
+<h1>Dům dětí a mládeže, Letovice, okres Blansko, Českobratrská 5/137, 679 61 Letovice<br />
+<small>e-mail: info@ddmletovice.cz, tel: 516 474 170, 516 476 880, mobil: 605 825 380, www.ddmletovice.cz</small></h1>
+
+<h2>POVINNOSTI A PRÁVA ÚČASTNÍKA ZÁJMOVÉHO VZDĚLÁVÁNÍ<br />V ZÁJMOVÉM KROUŽKU/KURZU DDM LETOVICE</h2>
+
+<ul>
+
+<li/>Účastník zájmového vzdělávání odevzdá řádně vyplněnou a podepsanou přihlášku společně se stanovenou platbou hotově v kanceláři DDM Letovice, nejpozději před první činností v zájmovém vzdělávání. Bez přihlášky         a bez úhrady platby za kroužek nemůže být zájemce do kroužku zařazen, protože není pojištěn.</li>
+<li/>Přihlásí – li se účastník v průběhu roku, může mu být částka snížena na základě písemné žádosti, kterou odsouhlasí ředitelka DDM Letovice.</li>
+<li/>Platbu za 2. pololetí je nutné uhradit nejpozději do konce ledna daného školního roku; doklad o zaplacení je nutné předložit vedoucímu kroužku (doporučujeme jeho uschování).</li>
+<li/>Kroužky probíhají zpravidla od října do začátku června daného školního roku.</li>
+<li/>Pokud účastník přestane kroužek navštěvovat, úplata se nevrací; ze závažného důvodu či z důvodu dlouhodobé zdravotní neschopnosti (řádně doložené) je možné poměrnou část platby vrátit.</li>
+<li/>Změny údajů v přihlášce je třeba nahlásit pracovníkům DDM Letovice.</li>
+<li/>Účastník zájmového vzdělávání je povinen dodržovat pokyny vedoucího kroužku i pracovníkům DDM Letovice, dbát maximální opatrnosti a neporušovat nařízení z oblasti bezpečnosti práce a úrazové prevence.</li>
+<li/>Splněním těchto náležitostí mohou být zájemci přijati k zájmovému vzdělávání a vztahují se na ně veškerá práva i povinnosti účastníka zájmového vzdělávání v DDM dle platných právních předpisů.</li>
+
+</ul>
+
+<p>Za Vaši spolupráci děkujeme.</p>
+
+<h2>PŘIHLÁŠKA do zájmového kroužku DDM Letovice ve školním roce 2014/2015</h2>
+
+<form method="POST">{% csrf_token %}
+
+    {% for item in form %}
+    {% if item.name != 'occupation' %}
+    <div class="form-group row">
+        <label for="{{ item.id_for_label }}" class="control-label col-md-2">{{ item.label }}</label>
+        <div class="col-md-9{% if item.errors %} alert alert-danger{% endif %}">
+            {{ item }}
+
+            {% if item.name == 'club_periods' %}
+            {{ form.occupation }}
+            {% endif %}
+
+            {% for error in item.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+
+            {% if item.name != 'club_periods' and item.help_text %}
+                <span class="help-block">{{ item.help_text }}</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+    <p><i>Souhlasím, aby osoba výše uvedená navštěvovala toto zájmové vzdělávání a dávám svolení k zasílání informací na uvedený e-mail.
+Souhlasím s uveřejněním fotografií a videozáznamů pořízených při činnosti DDM Letovice v souladu se zákonem 101/2000 Sb.
+Prohlašuji, že jsem se seznámil/a s právy a povinnostmi účastníka z.ú. i s Provozním a Vnitřním řádem DDM Letovice.
+Beru na vědomí, že veškeré údaje jsou požadovány na základě zákona č.561/2004 Sb. (školský zákon), vyhlášky č.364/2005Sb.,
+ve znění pozdějších předpisů a je s nimi nakládáno dle zákona 101/2000 Sb. o ochraně osobních údajů.</i></p>
+    <input type="submit" value="Odeslat přihlášku" />
+</form>
+
+{% addtoblock "js" %}
+<!--script type="text/javascript" src="{% static_url 'js/jquery.min.js' %}"></script-->
+<script type="text/javascript" src="{% static_url 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static_url 'bootstrap-multiselect/js/bootstrap-multiselect.js' %}"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#id_club_periods').multiselect({
+        enableFiltering: true
+    });
+    $('#id_occupation').multiselect();
+});
+</script>
+{% endaddtoblock %}
+
+{% addtoblock "css" %}
+<link rel="stylesheet" href="{% static_url 'bootstrap/css/bootstrap.min.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static_url 'bootstrap-multiselect/css/bootstrap-multiselect.css' %}" type="text/css"/>
+{% endaddtoblock %}
+
+{% endblock %}

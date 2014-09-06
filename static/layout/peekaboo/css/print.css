@@ -1,0 +1,21 @@
+/*
+Theme Name: Peekaboo
+Theme URL: http://themeforest.net/user/population2/
+Author: Population2
+
+*/
+
+body 				{ bakcground:#000; color: #000; font-size: 12pt; }
+#content-wrapper { overflow:auto; height:auto; weight: auto;}
+#nav-wrapper, #slide-container, #supersized, #pkb-crumbs, .search { display:none !important; }
+#main 				{ width: auto; margin: 0; padding: 0; border: 0; float: none !important; color: black; background: transparent; box-shadow:none; -moz-box-shadow:none; -webkit-box-shadow:none; }
+#home-content, #content, #sidebar-home, #sidebar, #content-clear 	{ float: none !important; }
+#sidebar-home, #sidebar, .sidebar-widget , img 						{ background: transparent !important; 
+border: none !important; }
+.sidebar-widget { box-shadow:none !important; -moz-box-shadow:none !important; -webkit-box-shadow:none !important; margin: 0; padding: 0; }
+#footer 			{ margin: 5% 0 0 0; padding: 0; border: 0; box-shadow:none; -moz-box-shadow:none; -webkit-box-shadow:none; }
+.fancy 				{ box-shadow:none; -moz-box-shadow:none; -webkit-box-shadow:none; margin: 0; padding: 0; font-size: 11pt; }
+.page_title 		{ padding: 0; }
+a:link, a:visited 	{ color: #0082C0; background: transparent; font-weight: bold; text-decoration: underline; }
+
+

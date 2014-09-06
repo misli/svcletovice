@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-07 16:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/settings.py:164 app/settings.py:227
+msgid "Default"
+msgstr ""
+
+#: app/settings.py:215
+msgid "Czech"
+msgstr ""
+
+#: app/settings.py:232
+msgid "Content"
+msgstr ""
+
+#: app/cajovna/admin.py:56
+msgid "All"
+msgstr ""
+
+#: app/cajovna/models.py:22 app/cajovna/models.py:43 app/cajovna/models.py:68
+msgid "Cajovna"
+msgstr ""
+
+#: app/cajovna/models.py:23
+msgid "Supplier"
+msgstr ""
+
+#: app/cajovna/models.py:24
+msgid "Suppliers"
+msgstr ""
+
+#: app/cajovna/models.py:44
+msgid "Category"
+msgstr ""
+
+#: app/cajovna/models.py:45
+msgid "Categories"
+msgstr ""
+
+#: app/cajovna/models.py:69
+msgid "Drug"
+msgstr ""
+
+#: app/cajovna/models.py:70
+msgid "Drugs"
+msgstr ""
+
+#: templates/404.html:4 templates/404.html.py:7
+msgid "Page not found"
+msgstr ""
+
+#: templates/500.html:4 templates/500.html.py:7
+msgid "Unhandled Exception"
+msgstr ""
