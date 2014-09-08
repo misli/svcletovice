@@ -16,6 +16,7 @@
                 page-break-after: always;
                 font-family: DejaSans;
                 font-size: 12pt;
+                line-height: 180%;
             }
         </style>
     </head>
@@ -23,9 +24,9 @@
         {% for club in object.clubs.all %}
         <div class="page">
             <p align="center"><font size="+3">PŘIHLÁŠKA</font> do zájmového kroužku DDM Letovice ve školním roce {{ club.school_year.name }}</p>
-            <p align="center">{{ object.occupation }}</p>
+            <p align="center">{{ object.age_group }}</p>
             <p>
-                Název kroužku: {{ club.name }}<br/>
+                Název kroužku: <b>{{ club.name }}</b><br/>
                 Jméno a příjmení: {{ object.firstname }} {{ object.lastname }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rodné číslo {{ object.birth_num }}<br/>
                 Bydliště: {{ object.address }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSČ: {{ object.postal_code }}<br/>
                 Státní občanství: {{ object.citizenship }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zdravotní pojišťovna: {{ object.insurance }}<br/>

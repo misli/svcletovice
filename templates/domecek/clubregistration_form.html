@@ -32,15 +32,10 @@
 <form method="POST">{% csrf_token %}
 
     {% for item in form %}
-    {% if item.name != 'occupation' %}
     <div class="form-group row">
         <label for="{{ item.id_for_label }}" class="control-label col-md-2">{{ item.label }}</label>
         <div class="col-md-9{% if item.errors %} alert alert-danger{% endif %}">
             {{ item }}
-
-            {% if item.name == 'clubs' %}
-            {{ form.occupation }}
-            {% endif %}
 
             {% for error in item.errors %}
                 <div>{{ error }}</div>
@@ -51,7 +46,6 @@
             {% endif %}
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 
     <p><i>Souhlasím, aby osoba výše uvedená navštěvovala toto zájmové vzdělávání a dávám svolení k zasílání informací na uvedený e-mail.
@@ -70,9 +64,11 @@ ve znění pozdějších předpisů a je s nimi nakládáno dle zákona 101/2000
 <script type="text/javascript">
 $(document).ready(function() {
     $('#id_clubs').multiselect({
-        enableFiltering: true
+        enableFiltering: true,
+        filterPlaceholder: 'Hledání (rozlišuje velká a malá písmena)',
+        nonSelectedText: 'Vyberte kroužek',
     });
-    $('#id_occupation').multiselect();
+    $('#id_age_group').multiselect();
 });
 </script>
 {% endaddtoblock %}

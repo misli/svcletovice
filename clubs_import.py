@@ -15,7 +15,8 @@ def import_clubs():
     # prvni radek jsou hlavicky
     del(rows[0])
 
-    school_year = SchoolYear.objects.get_or_create(name='2014/2015')[0]
+    school_year = SchoolYear.objects.get_or_create(year=2014)[0]
+    age_groups  = AgeGroup.objects.all()
 
     i = 0
     for c in rows:
@@ -25,7 +26,6 @@ def import_clubs():
         except:
             category = ClubCategory(name=c[3], order=i)
             category.save()
-        print c[5]
         leaders = []
         for leader_name in c[5] and c[5].strip().split(' a ') or []:
             leader_name = leader_name.strip()
@@ -43,12 +43,12 @@ def import_clubs():
         club.description = c[4]
         club.price = int(c[1])
         club.unit  = c[2]
-        club.start = '2014-10-01'
-        club.end = '2015-06-30'
         club.reg_active = True
         club.save()
         for leader in leaders:
             club.leaders.add(leader)
+        for age_group in age_groups:
+            club.age_groups.add(age_group)
         
         
 

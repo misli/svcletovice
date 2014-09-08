@@ -1,0 +1,58 @@
+[
+{
+    "pk": 1, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Sportovn\u011b \u2013 pohybov\u00e9", 
+        "order": 1
+    }
+},
+{
+    "pk": 7, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Pro dosp\u011bl\u00e9", 
+        "order": 7
+    }
+},
+{
+    "pk": 6, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Ostatn\u00ed, aneb co se jinam neve\u0161lo", 
+        "order": 6
+    }
+},
+{
+    "pk": 5, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Hudebn\u00ed a dramatick\u00e9", 
+        "order": 5
+    }
+},
+{
+    "pk": 3, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Tvo\u0159iv\u00e9", 
+        "order": 3
+    }
+},
+{
+    "pk": 4, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Jazykov\u00e9", 
+        "order": 4
+    }
+},
+{
+    "pk": 2, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Technick\u00e9", 
+        "order": 2
+    }
+}
+]
