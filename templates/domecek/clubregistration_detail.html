@@ -22,7 +22,7 @@
     <body>
         {% for club in object.clubs.all %}
         <div class="page">
-            <p align="center"><font size="+3">PŘIHLÁŠKA</font> do zájmového kroužku DDM Letovice ve školním roce 2014/2015</p>
+            <p align="center"><font size="+3">PŘIHLÁŠKA</font> do zájmového kroužku DDM Letovice ve školním roce {{ club.school_year.name }}</p>
             <p align="center">{{ object.occupation }}</p>
             <p>
                 Název kroužku: {{ club.name }}<br/>
