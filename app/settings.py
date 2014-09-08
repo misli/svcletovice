@@ -25,7 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 SECRET_KEY = get_secret_key(os.path.join(BASE_DIR, 'data', 'secret_key'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG'   in os.environ and os.environ['DEBUG']   and True or False
+DEBUG   = 'DEBUG'   in os.environ and os.environ['DEBUG']   and True or False
+DBDEBUG = 'DBDEBUG' in os.environ and os.environ['DBDEBUG'] and True or False
 
 TEMPLATE_DEBUG = False
 
