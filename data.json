@@ -1,1 +1,1316 @@
-[{"pk": 1, "model": "auth.user", "fields": {"username": "admin", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2014-08-25T08:16:59.315Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$SuTuoN2x5HOP$2sCc4v0R7ocThhivW1iZI5bkf1/NmR1L73/cmFeOqrs=", "email": "admin@svcletovice.cz", "date_joined": "2014-08-25T08:13:27.589Z"}}, {"pk": 1, "model": "domecek.occupation", "fields": {"name": "p\u0159ed\u0161kol\u00e1k"}}, {"pk": 2, "model": "domecek.occupation", "fields": {"name": "\u017e\u00e1k Z\u0160, S\u0160, student VO\u0160"}}, {"pk": 3, "model": "domecek.occupation", "fields": {"name": "student V\u0160, dosp\u011bl\u00fd"}}, {"pk": 1, "model": "domecek.period", "fields": {"end": "2015-01-31", "name": "podzim 2014", "start": "2014-09-01", "clubs": [1], "sign_end": "2014-11-30", "sign_start": "2014-08-25"}}]
+[
+{
+    "pk": 1, 
+    "model": "domecek.schoolyear", 
+    "fields": {
+        "name": "2014/2015"
+    }
+},
+{
+    "pk": 1, 
+    "model": "domecek.occupation", 
+    "fields": {
+        "name": "p\u0159ed\u0161kol\u00e1k"
+    }
+},
+{
+    "pk": 2, 
+    "model": "domecek.occupation", 
+    "fields": {
+        "name": "\u017e\u00e1k Z\u0160, S\u0160, student VO\u0160"
+    }
+},
+{
+    "pk": 3, 
+    "model": "domecek.occupation", 
+    "fields": {
+        "name": "student V\u0160, dosp\u011bl\u00fd"
+    }
+},
+{
+    "pk": 1, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Sportovn\u011b \u2013 pohybov\u00e9", 
+        "order": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Pro dosp\u011bl\u00e9", 
+        "order": 2
+    }
+},
+{
+    "pk": 3, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Ostatn\u00ed, aneb co se jinam neve\u0161lo", 
+        "order": 4
+    }
+},
+{
+    "pk": 4, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Hudebn\u00ed a dramatick\u00e9", 
+        "order": 8
+    }
+},
+{
+    "pk": 5, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Tvo\u0159iv\u00e9", 
+        "order": 14
+    }
+},
+{
+    "pk": 6, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Jazykov\u00e9", 
+        "order": 16
+    }
+},
+{
+    "pk": 7, 
+    "model": "domecek.clubcategory", 
+    "fields": {
+        "name": "Technick\u00e9", 
+        "order": 34
+    }
+},
+{
+    "pk": 1, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Airsoftov\u00fd klub ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 300, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            3
+        ], 
+        "page": null, 
+        "unit": "pololetn\u00ed", 
+        "description": "Zam\u011b\u0159en\u00ed na airsoftovou \u010dinnost, airsoftov\u00e1 kl\u00e1n\u00ed, taktika, strategie, semin\u00e1\u0159e. \u010cinnost dle po\u010das\u00ed, v\u017edy v sobotu (minim\u00e1ln\u011b 4 hodiny), r\u016fzn\u00e1 airsoftov\u00e1 h\u0159i\u0161t\u011b a prostory. "
+    }
+},
+{
+    "pk": 2, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 2, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Arteterapeutick\u00e9 ve\u010dery ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 300, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            3, 
+            4
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "V\u00fdtvarn\u00e9 tvo\u0159en\u00ed zam\u011b\u0159en\u00e9 na sebepozn\u00e1n\u00ed a relaxaci. Arteterapie nevy\u017eaduje \u017e\u00e1dn\u00fd v\u00fdtvarn\u00fd um ani zku\u0161enosti, sta\u010d\u00ed chu\u0165 v\u00fdtvarn\u011b tvo\u0159it. Pro mu\u017ee a \u017eeny od 18 let 1 x za m\u011bs\u00edc ve \u010dtvrtek od 18 do 20 hodin v DDM. "
+    }
+},
+{
+    "pk": 3, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Bowlingov\u00fd", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            5
+        ], 
+        "page": null, 
+        "unit": "pololetn\u00ed", 
+        "description": "Z\u00e1klady hry, pravidla, technika, turnaje. Pro d\u011bti od 7 do 15 let. Bude prob\u00edhat v prostor\u00e1ch bowlingov\u00e9 \u010d\u00e1sti restaurace Hav\u00edrna v Letovic\u00edch 1x za 14 dn\u00ed ve st\u0159edu od 15 do 16,30 hodin. "
+    }
+},
+{
+    "pk": 4, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 3, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Co vypr\u00e1v\u011bl star\u00fd dub", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            5, 
+            6
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Syntetick\u00fd krou\u017eek pro d\u011bti 5-7 let  \u2013 hry,v\u00fdtvarka, hudebka, pohybov\u00e9 aktivity v jednom! V \u00fater\u00fd od 16 do 17 hodin. "
+    }
+},
+{
+    "pk": 5, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 2, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Cvi\u010den\u00ed pro seniory ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 300, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            6, 
+            7
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Cvi\u010den\u00ed pro seniory ve st\u0159edu od 17,30 do 18,30 hodin v s\u00e1le DDM. Cviky balan\u010dn\u00edho, silov\u00e9ho  i stre\u010dinkov\u00e9ho charakteru. "
+    }
+},
+{
+    "pk": 6, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 2, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Cvi\u010den\u00ed pro t\u011bhotn\u00e9 ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 300, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            7
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Cvi\u010den\u00ed pro t\u011bhotn\u00e9 ve st\u0159edu od 18,30 do 19,30 hodin v s\u00e1le DDM. Cvi\u010den\u00ed na gymnastick\u00e9m m\u00ed\u010di, cviky silov\u00e9ho i stre\u010dinkov\u00e9ho charakteru, relaxace s d\u011b\u0165\u00e1tkem. "
+    }
+},
+{
+    "pk": 7, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Cvi\u010den\u00ed\u010dko", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            7, 
+            8
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u011bti od 2 do 5 let s rodi\u010di. Za\u017eijte spole\u010dnou radost z pohybu p\u0159i vyu\u017eit\u00ed vhodn\u00fdch pom\u016fcek. Prost\u0159ednictv\u00edm \u0159\u00edkanek a p\u00edsni\u010dek u d\u011bt\u00ed podpo\u0159\u00edme rozvoj \u0159e\u010di a vn\u00edm\u00e1n\u00ed rytmu. Cvi\u010den\u00ed v\u017edy ve st\u0159edu od 16 do 17 hodin v t\u011blocvi\u010dn\u011b Z\u0160 Komensk\u00e9ho. Vedouc\u00ed: Lucie Proch\u00e1zkov\u00e1"
+    }
+},
+{
+    "pk": 8, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 4, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Divadeln\u00ed krou\u017eek ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 450, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            8
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "V tomto krou\u017eku si m\u016f\u017eete zkusit b\u00fdt \u00fapln\u011b n\u011bk\u00fdm jin\u00fdm. Budeme se prom\u011b\u0148ovat v nejr\u016fzn\u011bj\u0161\u00ed postavy, zv\u00ed\u0159ata, poh\u00e1dkov\u00e9 bytosti. Vyzkou\u0161\u00edme si r\u016fzn\u00e9 formy divadel - klasickou antickou trag\u00e9dii s maskami, japonsk\u00e9 st\u00ednov\u00e9 divadlo, loutkov\u00e9 divadlo s ma\u0148\u00e1sky i marionetami, \u017eiv\u00e9 obrazy a pohybov\u00e9 divadlo, pokus\u00edme se dramaticky ztv\u00e1rnit va\u0161e obl\u00edben\u00e9 p\u0159\u00edb\u011bhy, knihy, b\u00e1sn\u011b, ... Budeme si vyr\u00e1b\u011bt loutky, masky a kulisy. Pro d\u011bti od 8 do 12 let. V \u00fater\u00fd od 13,30 do 15 hodin. "
+    }
+},
+{
+    "pk": 9, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 4, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Divad\u00fdlko", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 450, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            9
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u011bti od 7 do 12 let. Ve \u010dtvrtek od 15 do 16,30 hodin."
+    }
+},
+{
+    "pk": 10, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 3, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Eko Farm\u00e1\u0159sk\u00fd", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            9
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "\u010cinnosti na farm\u011b, p\u011bstov\u00e1n\u00ed rostlin, chov zv\u00ed\u0159at, p\u00e9\u010de o kon\u011b a psy. Pro d\u011bti od 10 let.V DDM v pond\u011bl\u00ed od 16 do 17,30 hodin. "
+    }
+},
+{
+    "pk": 11, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 4, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Fl\u00e9tna ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 550, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            9
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Z\u00e1klady hry na fl\u00e9tnu, p\u00edsni\u010dky. Pro d\u011bti od 10 let. V pond\u011bl\u00ed od 15 do 16 hodin. Skupinka 3 a\u017e 5 d\u011bt\u00ed"
+    }
+},
+{
+    "pk": 12, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Geocaching", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 370, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            9
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Zalo\u017een\u00ed a dohled nad ke\u0161kou, hled\u00e1n\u00ed ke\u0161ek po  okol\u00ed, \u0161ifrova\u010dky, v\u00fdlety.  Pro d\u011bti od 8 do 15 let. Ve \u010dtvrtek od 17 do 18,30 hodin."
+    }
+},
+{
+    "pk": 13, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Hands up", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            7
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pohybov\u011b - tane\u010dn\u00ed krou\u017eek pro holky, \u010dekaj\u00ed v\u00e1s pohybov\u00e9 aktivity, cvi\u010den\u00ed s gymnastick\u00fdm m\u00ed\u010dem, balan\u010dn\u00ed, rovnov\u00e1\u017en\u00e1 i stre\u010dinkov\u00e1 cvi\u010den\u00ed, pohybov\u00e9 hry i tane\u010dn\u00ed aktivity. \"Chce\u0161 m\u00edt kr\u00e1snou postavu, dej si ruce nad hlavu! Hands up!\". Pro d\u00edvky od 7 do 15 let. Ve st\u0159edu  od 16,30 do 17,30 hodin v s\u00e1le DDM s novou zrcadlovou st\u011bnou!   "
+    }
+},
+{
+    "pk": 14, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Hr\u00e1tky s keramikou ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 390, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            7, 
+            8
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u011bti od 5 do 8 let. Modelov\u00e1n\u00ed z r\u016fzn\u00fdch druh\u016f hl\u00edn, glazov\u00e1n\u00ed, z\u00e1kladn\u00ed keramick\u00e9 techniky a postupy. Sch\u016fzky v pond\u011bl\u00ed od 14 do 15 hodin v DDM. "
+    }
+},
+{
+    "pk": 15, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 3, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Hr\u00e1tky s p\u0159\u00edrodou", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            8, 
+            10
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u011bti, co maj\u00ed r\u00e1dy p\u0159\u00edrodu, r\u00e1dy si hraj\u00ed a cht\u011bj\u00ed se dozv\u011bd\u011bt o mnoha p\u0159\u00edrodov\u011bdn\u00fdch zaj\u00edmavostech. Pro d\u011bti od 7 do 10 let. V pond\u011bl\u00ed od 13,15 do 15,15 hodin v DDM. S\u00a0vyzvednut\u00edm d\u011bt\u00ed v\u00a0dru\u017ein\u011b."
+    }
+},
+{
+    "pk": 16, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 6, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Hrav\u00e1 angli\u010dtina / 390 K\u010d / pololet\u00ed", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 390, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            9, 
+            10
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Slov\u00ed\u010dka, jednoduch\u00e9 v\u011bty, hry, ale hlavn\u011b velk\u00e1 legrace! V\u017edy ve \u010dtvrtek od 14 do 15 v DDM. Pro d\u011bti od 7 do 10 let.  "
+    }
+},
+{
+    "pk": 17, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Jezdeck\u00fd klub", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 790, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            5, 
+            9, 
+            11
+        ], 
+        "page": null, 
+        "unit": "dva m\u011bs\u00edce", 
+        "description": "Cetkovice \u2013 p\u0159\u00edprava na parkurov\u00e9 sk\u00e1k\u00e1n\u00ed, odd\u00edl \u201eH\u0159\u00edbata\u201c tr\u00e9nuje ve \u010dtvrtek a odd\u00edl \u201eRaj\u0165\u00e1ci\u201c v p\u00e1tek od 14,15 hodin, doprava s omezenou kapacitou z Letovic zaji\u0161t\u011bn., Informace v DDM Zuzana Musilov\u00e1, prvn\u00ed v\u00fdjezd v druh\u00e9 polovin\u011b z\u00e1\u0159\u00ed. "
+    }
+},
+{
+    "pk": 18, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Ju Jutsu Kodokan Judo ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 250, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            5, 
+            11, 
+            12
+        ], 
+        "page": null, 
+        "unit": "dva m\u011bs\u00edce", 
+        "description": "Syst\u00e9m tradi\u010dn\u00edho japonsk\u00e9ho bojov\u00e9ho um\u011bn\u00ed vhodn\u00e9ho pro kluky i holky, d\u011bti, ml\u00e1de\u017e i dosp\u011bl\u00e9. V\u017edy ve st\u0159edu a p\u00e1tek od 16,30 do 18 hodin. Ur\u010deno pro z\u00e1jemce od 6 let.  (licence \u010cSJu 100,- K\u010d / rok, SOKOL 200,-K\u010d / rok)"
+    }
+},
+{
+    "pk": 19, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Keramick\u00e1 dopoledne pro rodi\u010de a d\u011bti ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 400, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            8, 
+            12
+        ], 
+        "page": null, 
+        "unit": "10 lekc\u00ed", 
+        "description": "Z\u00e1klady pr\u00e1ce v keramick\u00e9 d\u00edln\u011b, modelov\u00e1n\u00ed z r\u016fzn\u00fdch druh\u016f hl\u00edn, glazov\u00e1n\u00ed, pr\u00e1ce s barv\u00edtky i engobami. Sch\u016fzky v pond\u011bl\u00ed od 9 do 10,30 hodin v DDM."
+    }
+},
+{
+    "pk": 20, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Keramika pro pokro\u010dil\u00e9 ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 530, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            8
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u011bti od 8 let. Navazuj\u00edc\u00ed cyklus pr\u00e1ce s keramikou, glazov\u00e1n\u00ed, pr\u00e1ce s engobou a oxidy. Pr\u00e1ce s r\u016fzn\u00fdmi druhy hl\u00edn. Sch\u016fzky od 16 do 17,30 v pond\u011bl\u00ed v DDM.  "
+    }
+},
+{
+    "pk": 21, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Keramika pro za\u010d\u00e1te\u010dn\u00edky ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 490, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u011bti od 8 let. Z\u00e1klady pr\u00e1ce v keramick\u00e9 d\u00edln\u011b, modelov\u00e1n\u00ed z r\u016fzn\u00fdch druh\u016f hl\u00edn, glazov\u00e1n\u00ed, pr\u00e1ce s barv\u00edtky i engobami. Sch\u016fzky v pond\u011bl\u00ed od 15  do 16 hodin v DDM. "
+    }
+},
+{
+    "pk": 22, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 4, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Kl\u00e1vesy ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 550, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            9
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Z\u00e1klady hry na kl\u00e1vesy, akordy, p\u00edsni\u010dky. Pro d\u011bti od 10 let. V pond\u011bl\u00ed od 14 do 15 hodin. Skupinka 3 a\u017e 5 d\u011bt\u00ed."
+    }
+},
+{
+    "pk": 23, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 3, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Klub deskov\u00fdch her ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            9
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Hran\u00ed modern\u00edch i klasick\u00fdch deskov\u00fdch her. \u010cek\u00e1 na v\u00e1s pades\u00e1tka deskov\u00fdch her, kter\u00e9 v DDM m\u00e1me a neust\u00e1le sb\u00edrku roz\u0161i\u0159ujeme. Z\u00e1bava, post\u0159eh, nap\u011bt\u00ed, spolupr\u00e1ce, sout\u011b\u017een\u00ed, nov\u00e9 znalosti, z\u00e1\u017eitky. Pro d\u011bti od 7 let. V \u00fater\u00fd od 16 do 17,30 hodin. "
+    }
+},
+{
+    "pk": 24, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 3, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Klub DofE ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 150, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            7, 
+            12
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Klub pln\u00fd aktivit pro st\u0159edo\u0161kol\u00e1ky v r\u00e1mci mezin\u00e1rodn\u00edho projektu v\u00e9vody z Edimburghu (www.dofe.cz). Ve \u010dtvrtek od 18 do 19 hodin 1x za 14 dn\u00ed."
+    }
+},
+{
+    "pk": 25, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Klub Kopretina se Zuzkou ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 400, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            7, 
+            12, 
+            13
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Pro d\u00edvky od 10 do 17 let. Sch\u016fzky v\u017edy ve st\u0159edu od 15 do 16, 30 hodin v DDM. Tvo\u0159en\u00ed  z r\u016fzn\u00fdch materi\u00e1l\u016f - dr\u00e1tk\u016f, kor\u00e1lk\u016f, ov\u010d\u00edho rouna, skla, keramiky, kamen\u016f, pap\u00edru, ubrousk\u016f, organzy aj., kombinace t\u011bchto materi\u00e1l\u016f. V\u00fdroba n\u00e1u\u0161nic, n\u00e1ramk\u016f, n\u00e1hrdeln\u00edk\u016f, sv\u00edcn\u016f z dr\u00e1tk\u016f, so\u0161ky z ov\u010d\u00edho rouna, dr\u00e1tkovan\u00fdch ozdob, tri\u010dek zdoben\u00fdch savovou technikou aj. "
+    }
+},
+{
+    "pk": 26, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Kopan\u00e1 p\u0159\u00edpravka", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 500, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            13, 
+            14, 
+            15, 
+            16
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Fotbalov\u00e1 dovednost, v\u0161estrannost, tr\u00e9ninky, z\u00e1pasy. Pond\u011bl\u00ed a st\u0159eda od 16,30 do 18 hodin, h\u0159i\u0161t\u011b AFK Letovice,  od listopadu sportovn\u00ed hala Letovice. "
+    }
+},
+{
+    "pk": 27, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Kopan\u00e1 \u017e\u00e1ci ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 500, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            14, 
+            15, 
+            16, 
+            17, 
+            18
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Fotbalov\u00e1 dovednost, v\u0161estrannost, tr\u00e9ninky, z\u00e1pasy. Pond\u011bl\u00ed a st\u0159eda od 16,30 do 18 hodin, h\u0159i\u0161t\u011b AFK Letovice,  od listopadu v t\u011blocvi\u010dn\u011b Z\u0160 Komensk\u00e9ho Letovice. "
+    }
+},
+{
+    "pk": 28, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 4, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Kytara ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            17, 
+            18
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "V\u00fduka akord\u016f a z\u00e1klady hry, p\u00edsni\u010dky nejen k t\u00e1bor\u00e1ku. Pro d\u011bti od 10 let s vlastn\u00edm n\u00e1strojem v \u00fater\u00fd od 16 do 17 hodin. "
+    }
+},
+{
+    "pk": 29, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Lezeck\u00fd ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 900, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            19
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Z\u00e1klady uzl\u016f, lezen\u00ed, sla\u0148ov\u00e1n\u00ed.  Lezen\u00ed na um\u011bl\u00e9 st\u011bn\u011b. V cen\u011b doprava, poji\u0161t\u011bn\u00ed a pron\u00e1jem t\u011blocvi\u010dny i pom\u016fcek ve Velk\u00fdch Opatovic\u00edch, kde je nov\u00e1 lezeck\u00e1 st\u011bna. Pro d\u011bti od 10 let. V \u00fater\u00fd od 15 do 16,30 hodin."
+    }
+},
+{
+    "pk": 30, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Mal\u00e1 atletika", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 420, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            19, 
+            20
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "V\u0161estrann\u00e1 sportovn\u00ed p\u0159\u00edprava, sezn\u00e1men\u00ed s atletikou, rozvoj obratnosti. Pro d\u011bti od 8 do 12 let. V pond\u011bl\u00ed od 16 do 17,30 hodin v are\u00e1lu a t\u011blocvi\u010dn\u011b Z\u0160 Komensk\u00e9ho Letovice."
+    }
+},
+{
+    "pk": 31, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Mi\u010duda", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            12, 
+            20
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Sportovn\u00ed hry, baseball, florbal, basketbal, p\u0159ehazovan\u00e1, vyb\u00edjen\u00e1, kopan\u00e1 a ostatn\u00ed nejen m\u00ed\u010dov\u00e9 hry. Pro d\u011bti od 7 let v t\u011blocvi\u010dn\u011b Z\u0160 Komensk\u00e9ho Letovice ka\u017ed\u00e9 pond\u011bl\u00ed od 15,45 do 16,45 hodin. "
+    }
+},
+{
+    "pk": 32, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "MOVE IT ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 400, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            12, 
+            21
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Tan\u010dit m\u016f\u017ee ka\u017ed\u00fd! Pohybov\u011b-tane\u010dn\u00ed krou\u017eek, vyzkou\u0161\u00edme r\u016fzn\u00e9 tane\u010dn\u00ed styly, zahrajeme si hry, nacvi\u010d\u00edme vystoupen\u00ed. Sch\u016fzky v p\u00e1tek od 15,00 do 16, 30 hodin v DDM. Pro d\u00edvky od 7 let. "
+    }
+},
+{
+    "pk": 33, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Orienta\u010dn\u00ed b\u011bh", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            21, 
+            22
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Orientace v ter\u00e9nu pomoc\u00ed mapy a buzoly, z\u00e1klady orienta\u010dn\u00edho b\u011bhu, sout\u011b\u017ee. Pro d\u011bti od 7 do 15 let. Ve \u010dtvrtek  od 15 do 16,30 hodin."
+    }
+},
+{
+    "pk": 34, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 7, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Pap\u00edrov\u00fd model\u00e1\u0159 ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            22, 
+            23
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Stavba pap\u00edrov\u00fdch model\u016f pro za\u010d\u00ednaj\u00edc\u00ed model\u00e1\u0159e, vhodn\u00e9 pro d\u011bti od 8 let v DDM ka\u017ed\u00e9 \u00fater\u00fd od 14 do 15 hodin. "
+    }
+},
+{
+    "pk": 35, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 7, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Plastikov\u00fd model\u00e1\u0159 ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            23
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Stavba model\u016f, dior\u00e1mat, vhodn\u00e9 pro d\u011bti od 9 let v DDM ka\u017ed\u00e9 \u00fater\u00fd od 15 do 16,30 hodin. "
+    }
+},
+{
+    "pk": 36, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Plav\u00e1\u010dek ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 950, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            5, 
+            8, 
+            23
+        ], 
+        "page": null, 
+        "unit": "kurz ", 
+        "description": "2 m\u011bs\u00ed\u010dn\u00ed kurz plav\u00e1n\u00ed s individu\u00e1ln\u00edm p\u0159\u00edstupem \u2013 8x kryt\u00fd baz\u00e9n Boskovice. V cen\u011b doprava, vstupy, poji\u0161t\u011bn\u00ed, plaveck\u00fd v\u00fdcvik. Pro maxim\u00e1ln\u011b 8 d\u011bt\u00ed od 5 let. Z\u00edsk\u00e1n\u00ed plaveck\u00fdch dovednost\u00ed, hr\u00e1tky ve vod\u011b. Od \u0159\u00edjna prvn\u00ed skupina v \u00fater\u00fd, druh\u00e1 ve st\u0159edu v\u017edy od 14,30 do 17 hodin 1x za 14 dn\u00ed. "
+    }
+},
+{
+    "pk": 37, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 7, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Programov\u00e1n\u00ed 12+ ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            5, 
+            8
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Z\u00e1klady programov\u00e1n\u00ed v jazyce Python. Naprogramuj si  vlastn\u00ed hru. Pro d\u011bti od 12 let.V \u00fater\u00fd od 16 do 17 hodin. "
+    }
+},
+{
+    "pk": 38, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 7, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Raketov\u00fd model\u00e1\u0159 ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            24
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Stavba model\u016f raket a maket, sout\u011b\u017ee, pro d\u011bti od 9 let v DDM ka\u017ed\u00fd p\u00e1tek od 14,30 do 16 hodin. "
+    }
+},
+{
+    "pk": 39, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 7, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Robotick\u00fd", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            24
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Stavba modelu robota z Lega, programov\u00e1n\u00ed pohybu robota, pr\u00e1ce na PC, krou\u017eek v r\u00e1mci podpory v\u011bdy d\u011bt\u00ed a ml\u00e1de\u017ee ve spolupr\u00e1ci s Jihomoravsk\u00fdm centrem pro mezin\u00e1rodn\u00ed mobilitu. Pro d\u011bti od 10 do 16 let v DDM ka\u017ed\u00e9 \u00fater\u00fd od 17 do 18 hodin. "
+    }
+},
+{
+    "pk": 40, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Rugbyov\u00fd ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            25
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Netradi\u010dn\u00ed, ale velmi zaj\u00edmav\u00fd sport. Pohybov\u00e1 pr\u016fprava, pohybov\u00e9 hry, obratnost, post\u0159eh. Pravidla rugby, z\u00e1klady hry, cvi\u010den\u00ed a n\u00e1cvik (rozehr\u00e1vky, vhazov\u00e1n\u00ed, v\u00fdkop, p\u0159ihr\u00e1vka, ml\u00fdn, ....). Ide\u00e1ln\u00ed sport k vybit\u00ed energie v r\u00e1mci pravidel, vhodn\u00e9 nejenom pro \u017eiv\u00e9 a aktivn\u00ed d\u011bti ve v\u011bku od 5 do 10  let. Chytne v\u00e1s to! Ve \u010dtvrtek  od 16 do 17,30 hodin."
+    }
+},
+{
+    "pk": 41, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Ryb\u00e1\u0159", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            25
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Teorie, \u0159\u00e1d, povolenka k lovu, vhodn\u00e9 pro d\u011bti od 7 let. "
+    }
+},
+{
+    "pk": 42, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Sport\u00edk ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 380, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            8
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Netradi\u010dn\u00ed pohybov\u00e9 aktivity pro kluky a holky za pou\u017eit\u00ed b\u011b\u017en\u00fdch i m\u00e9n\u011b b\u011b\u017en\u00fdch pom\u016fcek. Rozv\u00edjen\u00ed koordinace, obratnosti, prostorov\u00e9 orientace, spolupr\u00e1ce d\u011bt\u00ed. Vyzkou\u0161\u00edme si ringo, baseball, trampol\u00edny,\u2026 Pro d\u011bti od 6 do 11 let. Od \u0159\u00edjna v\u017edy ve \u010dtvrtek od 15 do 16 hodin v t\u011blocvi\u010dn\u011b Z\u0160 Komensk\u00e9ho Letovice. "
+    }
+},
+{
+    "pk": 43, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Stoln\u00ed tenis A, B ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 420, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            8, 
+            14
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Zdokonalov\u00e1n\u00ed techniky, strategie, sout\u011b\u017ee, \u010dinnost do konce dubna 2015. Informace a prvn\u00ed tr\u00e9nink v \u00fater\u00fd 23. 9. 2013 od 16 hodin v t\u011blocvi\u010dn\u011b Z\u0160 Tyr\u0161ova. New ROBOPONG. Tr\u00e9ninky v \u00fater\u00fd a p\u00e1tek. "
+    }
+},
+{
+    "pk": 44, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Stoln\u00ed tenis p\u0159\u00edpravka ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 370, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            14, 
+            26
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Z\u00e1klady hern\u00ed techniky, pravidla, sout\u011b\u017ee. Pro d\u011bti od 7 let. Ukon\u010den\u00ed \u010dinnosti duben 2015. Informace a prvn\u00ed tr\u00e9nink v \u00fater\u00fd 23. 9. 2013 14,30 hodin v t\u011blocvi\u010dn\u011b b\u00fdval\u00e9 Z\u0160 Tyr\u0161ova. Tr\u00e9ninky v \u00fater\u00fd a p\u00e1tek. "
+    }
+},
+{
+    "pk": 45, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 3, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "\u0160\u00eddla pro star\u0161\u00ed a pokro\u010dil\u00e9", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            14, 
+            26, 
+            27
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Chcete nahl\u00e9dnout p\u0159\u00edrod\u011b pod pokli\u010dku? Vyzkou\u0161et si na vlastn\u00ed ruce i hlavu n\u011bkter\u00e9 principy v\u011bdeck\u00e9 pr\u00e1ce? A co t\u0159eba chov netradi\u010dn\u00edch \"mazl\u00ed\u010dk\u016f\" - mraveni\u0161t\u011b pod sklem anebo \u017e\u00ed\u017eal\u00e1rium? A zkusili jste si n\u011bkdy vychovat z housenky mot\u00fdla? Zaj\u00edmaj\u00ed V\u00e1s p\u0159\u00edrodn\u00ed zvl\u00e1\u0161tnosti ve Va\u0161em okol\u00ed? Jestli jste odpov\u011bd\u011bli alespo\u0148 jednou ANO, t\u011b\u0161\u00edme se na V\u00e1s v p\u0159\u00edrodov\u011bdn\u00e9m krou\u017eku \u0160\u00eddla pro star\u0161\u00ed a pokro\u010dil\u00e9 v\u017edy ve st\u0159edu od 15 do 16.30 hodin. "
+    }
+},
+{
+    "pk": 46, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Tane\u010dn\u00ed ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 350, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            27
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Z\u00e1klady country a spole\u010densk\u00fdch tanc\u016f.  Pro d\u011bti od 10 let.Ve \u010dtvrtek od 16 do 17 hodin. "
+    }
+},
+{
+    "pk": 47, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "To\u010den\u00ed na kruhu pro d\u011bti p\u00e1tek ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 550, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            2, 
+            28
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Modelov\u00e1n\u00ed, glazov\u00e1n\u00ed, pr\u00e1ce na kruhu, to\u010den\u00ed i obt\u00e1\u010den\u00ed s profesion\u00e1ln\u00ed kerami\u010dkou. Sch\u016fzky v p\u00e1tek v DDM od 15,30 do 17 hodin. Kapacita: 6 d\u011bt\u00ed"
+    }
+},
+{
+    "pk": 48, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "To\u010den\u00ed na kruhu pro d\u011bti \u00fater\u00fd ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 550, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            13, 
+            28
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Od n\u00e1vrhu p\u0159es technick\u00fd v\u00fdkres po fin\u00e1ln\u00ed v\u00fdrobek. To\u010den\u00ed, obt\u00e1\u010den\u00ed, glazov\u00e1n\u00ed m\u00e1\u010den\u00edm i \u0161t\u011btcem, v\u00fdroba s\u00e1drov\u00fdch forem. S  profesion\u00e1ln\u00ed kerami\u010dkou. Sch\u016fzky v \u00fater\u00fd v DDM od 15 do 16,30 hodin. Kapacita: 6 d\u011bt\u00ed "
+    }
+},
+{
+    "pk": 49, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Tvo\u0159\u00edlek", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            13, 
+            29
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Tvo\u0159en\u00ed a vyr\u00e1b\u011bn\u00ed \u2013 vyzkou\u0161\u00edme si malbu, kresbu, modelov\u00e1n\u00ed. Pr\u00e1ce s nejr\u016fzn\u011bj\u0161\u00edmi materi\u00e1ly (pap\u00edr, keramick\u00e1 hl\u00edna, vlna, textil, odpadov\u00fd materi\u00e1l, p\u0159\u00edrodniny, aj..). Pro d\u011bti od 5 do 9 let. "
+    }
+},
+{
+    "pk": 50, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 5, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "V\u00fdtvarn\u00e9 hry", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 390, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            29
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "V tomto krou\u017eku si vyzkou\u0161\u00edte mno\u017estv\u00ed v\u00fdtvarn\u00fdch technik a materi\u00e1l\u016f, o kter\u00fdch jste mo\u017en\u00e1 ani nev\u011bd\u011bli, \u017ee se daj\u00ed v\u00fdtvarn\u011b vyu\u017e\u00edt. Krom\u011b toho, \u017ee budeme i malovat a kreslit, budeme tvo\u0159it plastiky z odpadn\u00edch materi\u00e1l\u016f, vytv\u00e1\u0159et objekty v p\u0159\u00edrod\u011b, malovat na t\u011blo, zkusit tesat do kamene, vytv\u00e1\u0159et kol\u00e1\u017ee, frot\u00e1\u017ee a tisky\u2026  Fantazii se meze nekladou! Pro d\u011bti od 8 let. Sch\u016fzky v\u017edy v \u00fater\u00fd od 16 do 17,30 hodin v DDM. "
+    }
+},
+{
+    "pk": 51, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 1, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "Workout - Seberevolta Letovice ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            4, 
+            25
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Origin\u00e1ln\u00ed syst\u00e9m posilov\u00e1n\u00ed s vlastn\u00edm t\u011blem s vyu\u017eit\u00edm kovov\u00fdch konstrukc\u00ed \u2013 hrazda, pr\u016flezky, z\u00e1bradl\u00ed, su\u0161\u00e1ky na pr\u00e1dlo, aj\u2026 , D\u00edky cvi\u010den\u00ed zv\u00fd\u0161\u00edte svou fyzickou kondici, silov\u00e9 schopnosti a flexibilitu. Cvi\u010dit m\u016f\u017ee ka\u017ed\u00fd! Tr\u00e9ninky ve \u010dtvrtek v DDM od 17 do  18 hodin. Pro d\u011bti a ml\u00e1de\u017e od 10 let. "
+    }
+},
+{
+    "pk": 52, 
+    "model": "domecek.club", 
+    "fields": {
+        "category": 7, 
+        "max_age": null, 
+        "end": "2015-06-30", 
+        "name": "\u017delezni\u010dn\u00ed model\u00e1\u0159 ", 
+        "reg_active": true, 
+        "photo": null, 
+        "price": 360, 
+        "min_age": null, 
+        "start": "2014-10-01", 
+        "school_year": 1, 
+        "leaders": [
+            25, 
+            30
+        ], 
+        "page": null, 
+        "unit": "pololet\u00ed", 
+        "description": "Stavba koleji\u0161t\u011b, z\u00e1klady \u0159\u00edzen\u00ed provozu, pro d\u011bti od 9 let. V DDM ka\u017edou st\u0159edu od 14,30 do 16 hodin. "
+    }
+},
+{
+    "pk": 1, 
+    "model": "domecek.clubregistration", 
+    "fields": {
+        "parent_name": "Jakub Dor\u0148\u00e1k", 
+        "school": "FI MUNI", 
+        "citizenship": "\u010cR", 
+        "firstname": "Kuba", 
+        "birth_num": "831109/0612", 
+        "lastname": "Dor\u0148\u00e1k", 
+        "created": "2014-09-08", 
+        "school_class": "1.A", 
+        "phone": "+420 516476880", 
+        "parent_mail": "jakub.dornak@misli.cz", 
+        "postal_code": "67962", 
+        "clubs": [
+            1, 
+            3, 
+            7
+        ], 
+        "address": "Prost\u0159edn\u00ed Po\u0159\u00ed\u010d\u00ed 19", 
+        "health": "", 
+        "parent_phone": "728 808 795", 
+        "insurance": "VZP", 
+        "occupation": 2
+    }
+}
+]

@@ -1,0 +1,50 @@
+{% load i18n %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>{% trans 'Club registration' %}</title>
+        <style type="text/css">
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+            @font-face {
+                font-family: DejaSans; 
+                src: url(file:///usr/share/fonts/dejavu/DejaVuSans.ttf);
+            }
+            .page {
+                page-break-after: always;
+                font-family: DejaSans;
+                font-size: 12pt;
+            }
+        </style>
+    </head>
+    <body>
+        {% for club in object.clubs.all %}
+        <div class="page">
+            <p align="center"><font size="+3">PŘIHLÁŠKA</font> do zájmového kroužku DDM Letovice ve školním roce 2014/2015</p>
+            <p align="center">{{ object.occupation }}</p>
+            <p>
+                Název kroužku: {{ club.name }}<br/>
+                Jméno a příjmení: {{ object.firstname }} {{ object.lastname }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rodné číslo {{ object.birth_num }}<br/>
+                Bydliště: {{ object.address }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSČ: {{ object.postal_code }}<br/>
+                Státní občanství: {{ object.citizenship }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zdravotní pojišťovna: {{ object.insurance }}<br/>
+                Typ a adresa školy: {{ object.school }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Třída: {{ object.school_class }}<br/>
+                Jméno a příjmení zákonného zástupce: {{ object.parent_name }}<br/>
+                E-mail zák. zástupce: {{ object.parent_mail }}<br/>
+                Telefon zák. zástupce: {{ object.parent_phone }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefon účastníka: {{ object.phone }}<br/>
+                Údaje o zdravotní způsobilosti účastníka (případná omezení):<br/>
+                {{ object.health }}
+            </p>
+
+            <p>Souhlasím s&nbsp;fotografováním mého dítěte a se zveřejňováním fotografií v&nbsp;rámci propagace aktivit DDM Letovice.
+                Souhlasím se zasíláním informačních materiálů DDM Letovice na výše uvedený e-mail.</p>
+            <p>Seznámil/a jsem se s&nbsp;Vnitřním řádem DDM Letovice.
+                Vnitřní řád je zveřejněn v&nbsp;DDM Letovice a na webových stránkách DDM Letovice.</p>
+             
+            <p>V  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            datum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Podpis zákonného zástupce účastníka:</p>
+        </div>
+        {% endfor %}
+    </body>
+</html>

@@ -29,7 +29,7 @@ DEBUG = 'DEBUG'   in os.environ and os.environ['DEBUG']   and True or False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['svcletovice.cz', 'www.svcletovice.cz', 'nove.svcletovice.cz', '127.0.0.1']
+ALLOWED_HOSTS = ['www.svcletovice.cz', '127.0.0.1']
 
 ADMINS = (
     ('Jakub Dorňák', 'admin@misli.cz'),
@@ -184,6 +184,10 @@ LOGGING = {
         '': {
             'handlers': ['console', 'mail_admins'],
             'level': DEBUG and 'DEBUG' or 'INFO',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'level': DBDEBUG and 'DEBUG' or 'INFO',
             'propagate': True,
         },
     },

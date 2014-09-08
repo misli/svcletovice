@@ -38,7 +38,7 @@
         <div class="col-md-9{% if item.errors %} alert alert-danger{% endif %}">
             {{ item }}
 
-            {% if item.name == 'club_periods' %}
+            {% if item.name == 'clubs' %}
             {{ form.occupation }}
             {% endif %}
 
@@ -46,7 +46,7 @@
                 <div>{{ error }}</div>
             {% endfor %}
 
-            {% if item.name != 'club_periods' and item.help_text %}
+            {% if item.name != 'clubs' and item.help_text %}
                 <span class="help-block">{{ item.help_text }}</span>
             {% endif %}
         </div>
@@ -69,7 +69,7 @@ ve znění pozdějších předpisů a je s nimi nakládáno dle zákona 101/2000
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#id_club_periods').multiselect({
+    $('#id_clubs').multiselect({
         enableFiltering: true
     });
     $('#id_occupation').multiselect();
