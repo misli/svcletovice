@@ -15,17 +15,12 @@ def import_clubs():
     # prvni radek jsou hlavicky
     del(rows[0])
 
-    school_year = SchoolYear.objects.get_or_create(year=2014)[0]
-    age_groups  = AgeGroup.objects.all()
-
-    i = 0
     for c in rows:
-        i += 1
         try:
-            category = ClubCategory.objects.get(name=c[3])
+            club = Club.objects.get(name=c[0])
         except:
-            category = ClubCategory(name=c[3], order=i)
-            category.save()
+            print c[0]
+            continue
         leaders = []
         for leader_name in c[5] and c[5].strip().split(' a ') or []:
             leader_name = leader_name.strip()
@@ -38,16 +33,7 @@ def import_clubs():
                 leader.username = leader_username
                 leader.save()
             leaders.append(leader)
-        club = Club(category=category, school_year=school_year)
-        club.name = c[0]
-        club.description = c[4]
-        club.price = int(c[1])
-        club.unit  = c[2]
-        club.reg_active = True
-        club.save()
         club.leaders = leaders
-        club.age_groups = age_groups
-
 
 
 if __name__ == "__main__":
