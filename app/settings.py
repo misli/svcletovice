@@ -28,9 +28,9 @@ SECRET_KEY = get_secret_key(os.path.join(BASE_DIR, 'data', 'secret_key'))
 DEBUG   = 'DEBUG'   in os.environ and os.environ['DEBUG']   and True or False
 DBDEBUG = 'DBDEBUG' in os.environ and os.environ['DBDEBUG'] and True or False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['svcletovice.cz', '127.0.0.1']
+ALLOWED_HOSTS = ['www.svcletovice.cz', '127.0.0.1']
 
 ADMINS = (
     ('Jakub Dorňák', 'admin@misli.cz'),
@@ -187,10 +187,10 @@ LOGGING = {
             'level': DEBUG and 'DEBUG' or 'INFO',
             'propagate': True,
         },
-        #'django.db.backends': {
-        #    'level': DBDEBUG and 'DEBUG' or 'INFO',
-        #    'propagate': True,
-        #},
+        'django.db.backends': {
+            'level': DBDEBUG and 'DEBUG' or 'INFO',
+            'propagate': True,
+        },
     },
 }
 
