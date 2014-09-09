@@ -7,6 +7,7 @@
 
 {% block base_content %}
 
+{% if not form.errors %}
 <h1>Dům dětí a mládeže, Letovice, okres Blansko, Českobratrská 5/137, 679 61 Letovice<br />
 <small>e-mail: info@ddmletovice.cz, tel: 516 474 170, 516 476 880, mobil: 605 825 380, www.ddmletovice.cz</small></h1>
 
@@ -26,8 +27,13 @@
 </ul>
 
 <p>Za Vaši spolupráci děkujeme.</p>
+{% endif %}
 
 <h2>PŘIHLÁŠKA do zájmového kroužku DDM Letovice ve školním roce 2014/2015</h2>
+
+{% for error in form.non_field_errors %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endfor %}
 
 <form method="POST">{% csrf_token %}
 
@@ -42,7 +48,7 @@
             {% endfor %}
 
             {% if item.name != 'clubs' and item.help_text %}
-                <span class="help-block">{{ item.help_text }}</span>
+                <div class="help-block">{{ item.help_text }}</div>
             {% endif %}
         </div>
     </div>
