@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, generators, nested_scopes, print_function, unicode_literals, with_statement
+
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
