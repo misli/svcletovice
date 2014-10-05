@@ -59,14 +59,22 @@ INSTALLED_APPS = (
     'cms',
     'mptt',
     'django_mptt_admin',
+    'easy_thumbnails',
     'menus',
     'south',
     'sekizai',
     'sortedm2m',
-    'photologue',
-    'cmsplugin_photologue',
+    'filer',
     'misli',
     'domecek',
+    'cmsplugin_articles',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_link',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_utils',
+    'cmsplugin_filer_video',
     'captcha',
 )
 
@@ -155,7 +163,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
-    'cms.context_processors.media',
+    'cms.context_processors.cms_settings',
     'sekizai.context_processors.sekizai',
     'misli.context_processors.misli',
 )
@@ -233,3 +241,27 @@ CAPTCHA_FOREGROUND_COLOR = '#001100'
 CAPTCHA_CHALLENGE_FUNCT  = 'captcha.helpers.math_challenge'
 CAPTCHA_NOISE_FUNCTIONS  = ()
 CAPTCHA_FILTER_FUNCTIONS = ()
+
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'preview': {
+            'size':     (240, 10000)
+        },
+        'view': {
+            'size':     (760, 570)
+        },
+    },
+}
+
