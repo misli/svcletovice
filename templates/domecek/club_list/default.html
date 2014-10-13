@@ -1,0 +1,39 @@
+{% load i18n domecek_tags %}
+
+<h1>{% trans 'Clubs' %} {{ school_year }}</h2>
+
+{% regroup clubs_by_cat by category as clubs_grouped %}
+
+{% for group in clubs_grouped %}
+
+<h2 class="category_name">{{ group.grouper.name }}</h2>
+
+{% for club in group.list %}
+
+<strong class="club_name">
+    {% if club.page %}
+    <a href="{{ club.page.get_absolute_url }}" alt="{{ club.page.get_title }}">{{ club.name }}</a>
+    {% else %}
+    {{ club.name }}
+    {% endif %}
+    <small>{{ club.price | currency }} / {{ club.unit }}</small>
+</strong>
+
+<div class="club_description">
+    {{ club.description | safe }}
+    <p>
+        {% if club.all_leaders %}
+            {% blocktrans count counter=club.all_leaders|length %}Led by{% plural %}Led by{% endblocktrans %}
+            {{ club.get_leaders_list }} |
+        {% endif %}
+        {% if club.reg_active %}
+        <a href="{% url 'club_registration:form' %}?club={{ club.id }}">{% trans 'register' %}</a>
+        {% else %}
+        {% trans 'registration closed' %}
+        {% endif %}
+    </p>
+</div>
+
+{% endfor %}
+
+{% endfor %}
