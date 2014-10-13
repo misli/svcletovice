@@ -11,18 +11,18 @@
         &mdash; Středisko volného času Letokruh, Letovice
     </title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css" media="all"   href="{% static_url 'layout/peekaboo/style.css' %}" />
     <link rel="stylesheet" type="text/css" media="print" href="{% static_url 'layout/peekaboo/css/print.css' %}" />
     <link rel="stylesheet" type="text/css" media="all"   href="{% static_url 'layout/peekaboo/css/nivo-slider.css' %}"/>
 
     {% render_block "css" %}
-    
+
     <!-- RSS -->
     <!--
     <link rel="pingback" href="/wordpress/xmlrpc.php" />
-    <link rel="alternate" type="application/rss+xml" title="Dům dětí a mládeže Letovice RSS Feed" href="/feed/" />    
+    <link rel="alternate" type="application/rss+xml" title="Dům dětí a mládeže Letovice RSS Feed" href="/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Dům dětí a mládeže Letovice &raquo; RSS zdroj" href="/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Dům dětí a mládeže Letovice &raquo; RSS komentářů" href="/comments/feed/" />
     -->
@@ -50,7 +50,7 @@
     });
     </script>
     <link rel="shortcut icon" href="{% static_url 'layout/peekaboo/img/favicon.ico' %}" />
-    
+
     <!-- All in One SEO Pack 2.1.4 by Michael Torbert of Semper Fi Web Design[193,257] -->
     <meta name="description" content="{% block description %}{% endblock %}" />
 
@@ -73,16 +73,17 @@
 {#% endif %#}
 
 <!-- Content Wrapper begin -->
-<div id="content-wrapper"> 
+<div id="content-wrapper">
 
     <!-- Container begin -->
-    <div id="container"> 
-    
+    <div id="container">
+
+
         <!-- Header begin -->
         <div id="header" class="clearfix">
-        
+
             <!-- Logo begin -->
-            <div id="logo">            
+            <div id="logo">
                 <a href="/" title="Dům dětí a mládeže Letovice" rel="home">
                     <img src="{% static_url 'layout/napis_ddm_cerven_2013_oranzova.png' %}" alt=" logo" />
                 </a>
@@ -94,7 +95,7 @@
                 <div id="nav-wrapper-center">
                     <div class="menu-hlavni-menu-container">
                         <ul id="menu-hlavni-menu" class="sf-menu">
-                            <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-29"><a href="/">Úvod</a></li>
+                            <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="/">Úvod</a></li>
                             <li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30"><a href="/aktuality/">Aktuality</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="/aktuality/">Vše</a></li>
@@ -102,14 +103,20 @@
                                     <li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="/kategorie/tabory/">Tábory</a></li>
                                     <li id="menu-item-166" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-166"><a href="/kategorie/pro-rodice/">Pro rodiče</a></li>
                                     <li id="menu-item-535" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-535"><a href="/kategorie/fotogalerie/">Fotogalerie</a></li>
+                                    <li id="menu-item-3747" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3747"><a href="/videogalerie/">Videogalerie</a></li>
                                     <li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33"><a href="/kategorie/nezarazene/">Nezařazené</a></li>
                                 </ul>
                             </li>
-                            <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114"><a href="/krouzky/">Kroužky</a></li>
+                            <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-84 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-114"><a href="/krouzky/">Kroužky</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-3527" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-3527"><a href="/krouzky/">Přehled kroužků</a></li>
+                                    <li id="menu-item-3526" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3526"><a href="/krouzky/prihlaska">Přihláška On Line</a></li>
+                                </ul>
+                            </li>
                             <li id="menu-item-859" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-859"><a href="/akce/">Akce</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-858" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-858"><a href="/kategorie/akce/">Aktuální akce</a></li>
-                                    <li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="/akce/">Přehled akcí 2013</a></li>
+                                    <li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="/akce/">Přehled akcí 2014</a></li>
                                 </ul>
                             </li>
                             <li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-83"><a href="/tabory/">Tábory</a>
@@ -152,7 +159,7 @@
         </div>
         <!-- Header end -->
 
-        
+
         <!--Main begin-->
         <div id="main" class="round_8 clearfix">
 
@@ -175,10 +182,10 @@
         </div>
         <!--Main end-->
 
-        
+
     </div>
     <!-- Container end -->
-    
+
 </div>
 <!-- Content Wrapper end -->
 
