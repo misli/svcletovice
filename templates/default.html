@@ -1,6 +1,26 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+{% load cms_tags menu_tags %}
 
 {% block title %}{% page_attribute "page_title" %}{% endblock %}
 
-{% block base_content %}{% placeholder "content" %}{% endblock %}
+{% block base_content %}
+
+<!-- Breadcrumb begin -->
+
+<div class="pad-left-10">
+    <div id="pkb-crumbs">
+        {% show_breadcrumb %}
+    </div>
+</div>
+<!-- Breadcrumb end -->
+
+
+<div class="page_title round_6">
+    <h1 class="replace">{% page_attribute "page_title" %}</h1>
+</div>
+
+<div id="content">
+    {% placeholder "content" %}
+</div>
+
+{% endblock %}
