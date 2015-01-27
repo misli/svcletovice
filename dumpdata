@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DATE="$(date +%y-%m-%d_%H%M%S)"
+./manage.py dumpdata            > data/${DATE}.json
+./manage.py dumpdata --indent=4 > data/${DATE}_indent.json
