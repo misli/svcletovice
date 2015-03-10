@@ -1,5 +1,7 @@
 #!/bin/bash
 
 DATE="$(date +%y-%m-%d_%H%M%S)"
+
+cp -a data/db.sqlite3 data/${DATE}.sqlite3
 ./manage.py dumpdata            > data/${DATE}.json
 ./manage.py dumpdata --indent=4 > data/${DATE}_indent.json
