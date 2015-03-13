@@ -1,0 +1,64 @@
+{% extends "default.html" %}
+{% load misli_tags sekizai_tags %}
+
+{% block title %}Přihláška na kroužky{% endblock %}
+
+{% block description %}Přihláška na kroužky SVČ Letokruh (Letovice){% endblock %}
+
+{% block base_content %}
+
+<h1>Dům dětí a mládeže, Letovice, okres Blansko, Českobratrská 5/137, 679 61 Letovice<br />
+<small>e-mail: info@ddmletovice.cz, tel: 516 474 170, 516 476 880, mobil: 605 825 380, www.ddmletovice.cz</small></h1>
+
+<h2>Přihláška na akci DDM Letovice ve školním roce 2014/2015</h2>
+
+{% for error in form.non_field_errors %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endfor %}
+
+<form method="POST">{% csrf_token %}
+
+    {% for item in form %}
+    <div class="form-group row">
+        <label for="{{ item.id_for_label }}" class="control-label col-md-2">{{ item.label }}</label>
+        <div class="col-md-9{% if item.errors %} alert alert-danger{% endif %}">
+            {{ item }}
+
+            {% for error in item.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+
+            {% if item.name != 'events' and item.help_text %}
+                <div class="help-block">{{ item.help_text }}</div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <p><i>Souhlasím s uvedením osobních údajů účastníka(ce) pro potřeby pořádající organizace ve smyslu zákona č.101/2000 Sb. o ochraně osobních údajů.</i></p>
+    <input type="submit" value="Odeslat přihlášku" />
+</form>
+
+{% addtoblock "js" %}
+<!--script type="text/javascript" src="{% static_url 'js/jquery.min.js' %}"></script-->
+<script type="text/javascript" src="{% static_url 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static_url 'bootstrap-multiselect/js/bootstrap-multiselect.js' %}"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#id_events').multiselect({
+        enableFiltering: true,
+        filterPlaceholder: 'Hledání (rozlišuje velká a malá písmena)',
+        nonSelectedText: 'Vyberte kroužek',
+    });
+    $('#id_age_group').multiselect();
+});
+</script>
+{% endaddtoblock %}
+
+{% addtoblock "css" %}
+<link rel="stylesheet" href="{% static_url 'bootstrap/css/bootstrap.min.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static_url 'bootstrap-multiselect/css/bootstrap-multiselect.css' %}" type="text/css"/>
+{% endaddtoblock %}
+
+{% endblock %}
