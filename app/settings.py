@@ -27,10 +27,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 SECRET_KEY = get_secret_key(os.path.join(BASE_DIR, 'data', 'secret_key'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG   = 'DEBUG'   in os.environ and os.environ['DEBUG']   and True or False
-DBDEBUG = 'DBDEBUG' in os.environ and os.environ['DBDEBUG'] and True or False
+DEBUG   = os.environ.get('DEBUG', False) and True or False
+DBDEBUG = os.environ.get('DEBUG', False) == 'DB'
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = os.environ.get('DEBUG', False) == 'TEMPLATE'
 
 ALLOWED_HOSTS = ['www.svcletovice.cz', '127.0.0.1']
 
@@ -234,6 +234,16 @@ CMS_PLACEHOLDER_CONF = {
         'name': _('Content'),
     },
 }
+
+CACHES = {
+    'default': {
+        'BACKEND':    'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION':   '127.0.0.1:11211',
+        'KEY_PREFIX': 'svcletovice',
+    }
+}
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
 CAPTCHA_FONT_SIZE        = 24
 CAPTCHA_LETTER_ROTATION  = None
