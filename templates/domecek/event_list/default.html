@@ -1,0 +1,29 @@
+{% load i18n domecek_tags %}
+
+{% for event in events %}
+
+<strong class="event_name">
+    {% if event.page %}
+    <a href="{{ event.page.get_absolute_url }}" alt="{{ event.page.get_title }}">{{ event.name }}</a>
+    {% else %}
+    {{ event.name }}
+    {% endif %}
+    <small> {{ event.price | currency }}</small>
+</strong>
+
+<div class="event_description">
+    {{ event.description | safe }}
+    <p>
+        {% if event.all_leaders %}
+            {% blocktrans count counter=event.all_leaders|length %}Led by{% plural %}Led by{% endblocktrans %}
+            {{ event.get_leaders_list }} |
+        {% endif %}
+        {% if event.reg_active %}
+        <a href="{% url 'event_registration:form' %}?event={{ event.id }}">{% trans 'register' %}</a>
+        {% else %}
+        {% trans 'registration closed' %}
+        {% endif %}
+    </p>
+</div>
+
+{% endfor %}
