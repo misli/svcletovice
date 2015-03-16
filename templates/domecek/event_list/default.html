@@ -2,14 +2,16 @@
 
 {% for event in events %}
 
-<strong class="event_name">
+<p class="event_name">
+    {{ event.start }} &mdash; {{ event.end }}<br/>
+    <strong>
     {% if event.page %}
     <a href="{{ event.page.get_absolute_url }}" alt="{{ event.page.get_title }}">{{ event.name }}</a>
     {% else %}
     {{ event.name }}
     {% endif %}
     <small> {{ event.price | currency }}</small>
-</strong>
+</strong></p>
 
 <div class="event_description">
     {{ event.description | safe }}
