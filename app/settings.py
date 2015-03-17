@@ -76,6 +76,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
     'captcha',
+    'dbtemplates',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -275,4 +276,14 @@ THUMBNAIL_ALIASES = {
         },
     },
 }
+
+# List of callables that know how to import templates from various sources.
+# See the comments in django/core/template/loader.py for interface
+# documentation.
+TEMPLATE_LOADERS = (
+    'dbtemplates.loader.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
 
