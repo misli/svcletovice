@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 import os
 from django.utils.translation import ugettext_lazy as _
-from misli.utils import get_secret_key
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -24,7 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret_key(os.path.join(BASE_DIR, 'data', 'secret_key'))
+try:
+    with open(os.path.join(BASE_DIR, 'data', 'secret_key')) as f:
+        SECRET_KEY = f.read()
+except IOError:
+    with open(os.path.join(BASE_DIR, 'data', 'secret_key'), 'w') as f:
+        from django.utils.crypto import get_random_string
+        SECRET_KEY = get_random_string(50,
+            'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)')
+        f.write(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG   = os.environ.get('DEBUG', False) and True or False
@@ -65,7 +72,6 @@ INSTALLED_APPS = (
     'sekizai',
     'sortedm2m',
     'filer',
-    'misli',
     'domecek',
     'cmsplugin_articles',
     'cmsplugin_filer_file',
@@ -77,6 +83,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_video',
     'captcha',
     'dbtemplates',
+    'ganalytics',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,7 +99,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'domecek.middleware.SchoolYearMiddleware',
-    'misli.middleware.SecureAdminMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -167,12 +173,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'cms.context_processors.cms_settings',
     'sekizai.context_processors.sekizai',
-    'misli.context_processors.misli',
 )
-
-# security settings
-SECURE_PROXY_SSL_HEADER = ('SECURE', 'true')
-SESSION_COOKIE_SECURE = not DEBUG
 
 LOGGING = {
     'version': 1,
@@ -286,4 +287,6 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
+
+GANALYTICS_TRACKING_CODE = 'UA-41666766-1'
 

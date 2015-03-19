@@ -1,5 +1,5 @@
 {% extends "default.html" %}
-{% load misli_tags sekizai_tags %}
+{% load staticfiles sekizai_tags %}
 
 {% block title %}Přihláška na akci{% endblock %}
 
@@ -40,9 +40,9 @@
 </form>
 
 {% addtoblock "js" %}
-<!--script type="text/javascript" src="{% static_url 'js/jquery.min.js' %}"></script-->
-<script type="text/javascript" src="{% static_url 'bootstrap/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static_url 'bootstrap-multiselect/js/bootstrap-multiselect.js' %}"></script>
+<!--script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script-->
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap-multiselect/js/bootstrap-multiselect.js' %}"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -57,8 +57,8 @@ $(document).ready(function() {
 {% endaddtoblock %}
 
 {% addtoblock "css" %}
-<link rel="stylesheet" href="{% static_url 'bootstrap/css/bootstrap.min.css' %}" type="text/css"/>
-<link rel="stylesheet" href="{% static_url 'bootstrap-multiselect/css/bootstrap-multiselect.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'bootstrap-multiselect/css/bootstrap-multiselect.css' %}" type="text/css"/>
 {% endaddtoblock %}
 
 {% endblock %}

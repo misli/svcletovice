@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags misli_tags %}
+{% load cms_tags menu_tags sekizai_tags staticfiles ganalytics %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="cs-CZ">
 
@@ -13,9 +13,9 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" media="all"   href="{% static_url 'layout/peekaboo/style.css' %}" />
-    <link rel="stylesheet" type="text/css" media="print" href="{% static_url 'layout/peekaboo/css/print.css' %}" />
-    <link rel="stylesheet" type="text/css" media="all"   href="{% static_url 'layout/peekaboo/css/nivo-slider.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/style.css' %}" />
+    <link rel="stylesheet" type="text/css" media="print" href="{% static 'layout/peekaboo/css/print.css' %}" />
+    <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/css/nivo-slider.css' %}"/>
 
     {% render_block "css" %}
 
@@ -26,30 +26,30 @@
     <link rel="alternate" type="application/rss+xml" title="Dům dětí a mládeže Letovice &raquo; RSS zdroj" href="/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Dům dětí a mládeže Letovice &raquo; RSS komentářů" href="/comments/feed/" />
     -->
-    <link rel='stylesheet' id='shadowbox-css-css'    href='{% static_url "shadowbox-js/css/shadowbox.css" %}' type='text/css' media='screen' />
-    <link rel='stylesheet' id='shadowbox-extras-css' href='{% static_url "shadowbox-js/css/extras.css" %}' type='text/css' media='screen' />
-    <!--script src="{% static_url 'jquery/jquery.min.js' %}"></script-->
+    <link rel='stylesheet' id='shadowbox-css-css'    href='{% static "shadowbox-js/css/shadowbox.css" %}' type='text/css' media='screen' />
+    <link rel='stylesheet' id='shadowbox-extras-css' href='{% static "shadowbox-js/css/extras.css" %}' type='text/css' media='screen' />
+    <!--script src="{% static 'jquery/jquery.min.js' %}"></script-->
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js?ver=1.7.1'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/superfish-compile.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/jquery.colorbox-min.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/jquery-ui-1.8.13.custom.min.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/jquery.tipTip.minified.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/p2.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/supersized.3.1.3.core.min.js?ver=true" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/jquery.nivo.slider.pack.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "layout/peekaboo/js/jquery.tinycarousel.min.js" %}'></script>
-    <script type='text/javascript' src='{% static_url "js/comment-reply.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/superfish-compile.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery.colorbox-min.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery-ui-1.8.13.custom.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery.tipTip.minified.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/p2.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/supersized.3.1.3.core.min.js?ver=true" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery.nivo.slider.pack.js" %}'></script>
+    <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery.tinycarousel.min.js" %}'></script>
+    <script type='text/javascript' src='{% static "js/comment-reply.min.js" %}'></script>
     <!--link rel="EditURI" type="application/rsd+xml" title="RSD" href="/wordpress/xmlrpc.php?rsd" /-->
     <!--link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wordpress/wp-includes/wlwmanifest.xml" /-->
     <!--link rel='next' title='Aktuality' href='/aktuality/' /-->
     <script type="text/javascript">
     jQuery(function($){
         $.supersized({
-            slides    :  [ { image : '{% static_url 'layout/pozadi_06-small.jpg' %}' } ]
+            slides    :  [ { image : '{% static 'layout/pozadi_06-small.jpg' %}' } ]
         });
     });
     </script>
-    <link rel="shortcut icon" href="{% static_url 'layout/peekaboo/img/favicon.ico' %}" />
+    <link rel="shortcut icon" href="{% static 'layout/peekaboo/img/favicon.ico' %}" />
 
     <!-- All in One SEO Pack 2.1.4 by Michael Torbert of Semper Fi Web Design[193,257] -->
     <meta name="description" content="{% block description %}{% endblock %}" />
@@ -68,9 +68,7 @@
 <!-- Head end -->
 
 <body class="single single-post postid-3068 single-format-standard unknown">
-{#% if settings.DEBUG or request.is_secure %#}
-    {% cms_toolbar %}
-{#% endif %#}
+{% cms_toolbar %}
 
 <!-- Content Wrapper begin -->
 <div id="content-wrapper">
@@ -85,7 +83,7 @@
             <!-- Logo begin -->
             <div id="logo">
                 <a href="/" title="Dům dětí a mládeže Letovice" rel="home">
-                    <img src="{% static_url 'layout/napis_ddm_cerven_2013_oranzova.png' %}" alt=" logo" />
+                    <img src="{% static 'layout/napis_ddm_cerven_2013_oranzova.png' %}" alt=" logo" />
                 </a>
             </div>
             <!-- Logo end -->
@@ -134,9 +132,9 @@
 </div>
 <!-- Content Wrapper end -->
 
-{% google_analytics "UA-41666766-1" %}
+{% ganalytics %}
 
-<script type='text/javascript' src='{% static_url "shadowbox-js/c0bbd40c5d9bf2135a84140b79f02e3a.js" %}'></script>
+<script type='text/javascript' src='{% static "shadowbox-js/c0bbd40c5d9bf2135a84140b79f02e3a.js" %}'></script>
 
 <!-- Begin Shadowbox JS v3.0.3.10 -->
 <!-- Selected Players: html, iframe, img, qt, swf, wmp -->
