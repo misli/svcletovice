@@ -28,12 +28,11 @@
         </style>
     </head>
     <body>
-        {% for club in object.clubs.all %}
         <div class="page">
-            <p align="center"><b>PŘIHLÁŠKA</b> do zájmového kroužku DDM Letovice ve školním roce {{ club.school_year.name }}</p>
+            <p align="center"><b>PŘIHLÁŠKA</b> do zájmového kroužku DDM Letovice ve školním roce {{ object.club.school_year.name }}</p>
             <p align="center">{{ object.age_group }}</p>
             <p>
-                Název kroužku: <b>{{ club.name }}</b><br/>
+                Název kroužku: <b>{{ object.club.name }}</b><br/>
                 Jméno a příjmení: <b>{{ object.firstname }} {{ object.lastname }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rodné číslo <b>{{ object.birth_num }}</b><br/>
                 Bydliště: <b>{{ object.street }}, {{ object.city }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSČ: <b>{{ object.postal_code }}</b><br/>
                 Státní občanství: <b>{{ object.citizenship }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zdravotní pojišťovna: <b>{{ object.insurance }}</b><br/>
@@ -53,6 +52,5 @@
             <p>V  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             datum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Podpis zákonného zástupce účastníka:</p>
         </div>
-        {% endfor %}
     </body>
 </html>

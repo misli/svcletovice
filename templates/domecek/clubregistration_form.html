@@ -47,7 +47,7 @@
                 <div>{{ error }}</div>
             {% endfor %}
 
-            {% if item.name != 'clubs' and item.help_text %}
+            {% if item.name != 'club' and item.help_text %}
                 <div class="help-block">{{ item.help_text }}</div>
             {% endif %}
         </div>
@@ -69,7 +69,7 @@ ve znění pozdějších předpisů a je s nimi nakládáno dle zákona 101/2000
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#id_clubs').multiselect({
+    $('#id_club').multiselect({
         enableFiltering: true,
         filterPlaceholder: 'Hledání (rozlišuje velká a malá písmena)',
         nonSelectedText: 'Vyberte kroužek',

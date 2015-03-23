@@ -10,27 +10,34 @@
 
 {% for club in group.list %}
 
-<strong class="club_name">
+<h3 class="club_name">
     {% if club.page %}
     <a href="{{ club.page.get_absolute_url }}" alt="{{ club.page.get_title }}">{{ club.name }}</a>
     {% else %}
     {{ club.name }}
     {% endif %}
+    <br/>
     <small>{{ club.price | currency }} / {{ club.unit }}</small>
-</strong>
+</h3>
 
 <div class="club_description">
     {{ club.description | safe }}
     <p>
         {% if club.all_leaders %}
             {% blocktrans count counter=club.all_leaders|length %}Led by{% plural %}Led by{% endblocktrans %}
-            {{ club.get_leaders_list }} |
+            {{ club.get_leaders_list }}
         {% endif %}
+        <br/>
+        {% if club.page %}
+        <a href="{{ club.page.get_absolute_url }}" alt="{{ club.page.get_title }}">více informací</a> |
+        {% endif %}
+
         {% if club.reg_active %}
         <a href="{% url 'club_registration:form' %}?club={{ club.id }}">{% trans 'register' %}</a>
         {% else %}
         {% trans 'registration closed' %}
         {% endif %}
+
     </p>
 </div>
 
