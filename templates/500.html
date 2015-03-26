@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends "default.html" %}
 {% load i18n %}
 
-{% block title %}{% trans 'Unhandled Exception' %}{% endblock %}
+{% block page_title %}{% trans 'Unhandled Exception' %}{% endblock %}
+{% block      title %}{% trans 'Unhandled Exception' %}{% endblock %}
 
 {% block content %}
-  <h1>{% trans 'Unhandled Exception' %}</h1>
+Omlouváme se, došlo k vnitřní chybě. Správce webu byl o chybě informován. Pokuste se prosím akci opakovat později.
 {% endblock %}
