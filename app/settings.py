@@ -70,7 +70,7 @@ INSTALLED_APPS = (
     'sekizai',
     'filer',
     'domecek',
-    'cmsplugin_articles',
+    'cmsplugin_iframe2',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
