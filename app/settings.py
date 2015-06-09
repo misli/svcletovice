@@ -289,3 +289,25 @@ GANALYTICS_TRACKING_CODE = 'UA-41666766-1'
 
 PRICE_DECIMAL_PLACES = 0
 
+# set to None to allow any value
+CMSPLUGIN_IFRAME_CLASSES = (
+    (None, _('no class')),
+)
+
+# set to None to allow any value
+CMSPLUGIN_IFRAME_WIDTHS = (
+    ('200', _('200 pixels')),
+    ('400', _('400 pixels')),
+    ('800', _('800 pixels')),
+    ('100%', _('100 %')),
+)
+
+# set to None to allow any value
+CMSPLUGIN_IFRAME_HEIGHTS = (
+    ('150', _('150 pixels')),
+    ('300', _('300 pixels')),
+    ('600', _('600 pixels')),
+    ('1200', _('1200 pixels')),
+    ('100%', _('100 %')),
+)
+
