@@ -9,7 +9,7 @@ from os.path import dirname, realpath, join
 if __name__ == "__main__":
     sys.path.insert(0, join(dirname(realpath(__file__)), "app"))
     os.environ.setdefault("DEBUG", "TEMPLATE")
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "svcletovice.settings")
 
     if os.getuid() == 0 and 'collectstatic' not in sys.argv:
         import pwd, grp
