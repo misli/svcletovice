@@ -327,3 +327,5 @@ CMSPLUGIN_IFRAME_HEIGHTS = (
     ('100%', _('100 %')),
 )
 
+TEST_RUNNER = None
+
