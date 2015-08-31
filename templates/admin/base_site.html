@@ -1,10 +1,13 @@
 {% extends "admin/base.html" %}
-{% load i18n %}
+{% load staticfiles %}
 
 {% block title %}{{ title }} | Administrace SVČ Letokruh{% endblock %}
 
 {% block branding %}
-<h1 id="site-name">Administrace SVČ Letokruh</h1>
+<h1 id="site-name">
+    <a href="/" style="display: inline-block; border-radius: 10px; background-color: #73d1ff; padding: 10px 5px 5px 10px;"><img src="{% static 'layout/logo.png' %}" alt="SVČ Letokruh" height="60" /></a>
+    <a href="{% url 'admin:index' %}">Administrace</a>
+</h1>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
