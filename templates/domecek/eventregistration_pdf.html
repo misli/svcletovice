@@ -43,6 +43,9 @@
                 Telefon zák. zástupce: <b>{{ object.parent_phone }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefon účastníka: <b>{{ object.phone }}</b><br/>
                 Údaje o zdravotní způsobilosti účastníka (případná omezení):<br/>
                 <b>{{ object.health }}</b>
+                {% for qa in object.get_questions_and_answers %}
+                <br/>{{ qa.question }}: <b>{{ qa.answer }}</b>
+                {% endfor %}
             </p>
 
             <p>

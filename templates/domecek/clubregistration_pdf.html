@@ -33,13 +33,15 @@
             <p align="center">{{ object.age_group }}</p>
             <p>
                 Název kroužku: <b>{{ object.club.name }}</b><br/>
-                Jméno a příjmení: <b>{{ object.firstname }} {{ object.lastname }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rodné číslo <b>{{ object.birth_num }}</b><br/>
-                Bydliště: <b>{{ object.street }}, {{ object.city }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSČ: <b>{{ object.postal_code }}</b><br/>
+                Jméno a příjmení: <b>{{ object.participant.full_name }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rodné číslo <b>{{ object.participant.birth_num }}</b><br/>
+                Bydliště: <b>{{ object.participant.address }}</b><br/>
                 Státní občanství: <b>{{ object.citizenship }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zdravotní pojišťovna: <b>{{ object.insurance }}</b><br/>
                 Typ a adresa školy: <b>{{ object.school }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Třída: <b>{{ object.school_class }}</b><br/>
-                Jméno a příjmení zákonného zástupce: <b>{{ object.parent_name }}</b><br/>
-                E-mail zák. zástupce: <b>{{ object.parent_mail }}</b><br/>
-                Telefon zák. zástupce: <b>{{ object.parent_phone }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefon účastníka: <b>{{ object.phone }}</b><br/>
+                E-mail účastníka: <b>{{ object.participant.email }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefon účastníka: <b>{{ object.participant.phone }}</b><br/>
+                {% for parent in object.participant.parents.all %}
+                Jméno a příjmení zákonného zástupce: <b>{{ parent.full_name }}</b><br/>
+                E-mail zák. zástupce: <b>{{ parent.email }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefon zák. zástupce: <b>{{ parent.phone }}</b><br/>
+                {% endfor %}
                 Údaje o zdravotní způsobilosti účastníka (případná omezení):<br/>
                 <b>{{ object.health }}</b>
             </p>
@@ -50,7 +52,8 @@
                 Vnitřní řád je zveřejněn v&nbsp;SVČ Letovice a na webových stránkách SVČ Letovice.</p>
 
             <p>V  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            datum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Podpis zákonného zástupce účastníka:</p>
+            datum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+            <p>Podpis zákonného zástupce účastníka:</p>
         </div>
     </body>
 </html>
