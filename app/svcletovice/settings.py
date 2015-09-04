@@ -331,5 +331,5 @@ TEST_RUNNER = None
 
 #LOGIN_URL = '/prihlaseni/'
 #LOGOUT_URL = '/odhlaseni/'
-LOGIN_REDIRECT_URL  = '/'
+LOGIN_REDIRECT_URL  = 'domecek:summary'
 
