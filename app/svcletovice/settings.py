@@ -47,7 +47,6 @@ ADMINS = (
 MANAGERS = (
     ('Jakub Dorňák', 'admin@misli.cz'),
     ('Petr Lizna', 'petr.lizna@ddmletovice.cz'),
-    ('SVČ Letovice', 'info@ddmletovice.cz'),
 )
 SERVER_EMAIL = '"WEB SVČ Letovice" <admin@svcletovice.cz>'
 
