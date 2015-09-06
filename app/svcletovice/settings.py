@@ -62,10 +62,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'djangocms_text_ckeditor',
+    'treebeard',
     'cms',
+    'menus',
     'mptt',
     'easy_thumbnails',
-    'menus',
     'sekizai',
     'filer',
     'domecek',
@@ -78,17 +79,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
     'captcha',
-    #'dbtemplates',
     'ganalytics',
-    'parler',
-    'taggit',
-    'taggit_autosuggest',
-    'django_select2',
-    'meta',
-    'meta_mixin',
-    'admin_enhancer',
-    'djangocms_blog',
-    'treebeard',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -333,3 +324,7 @@ TEST_RUNNER = None
 #LOGOUT_URL = '/odhlaseni/'
 LOGIN_REDIRECT_URL  = 'domecek:summary'
 
+
+# djangocms_blog settings
+META_SITE_PROTOCOL  = 'https'
+META_SITE_DOMAIN    = 'svcletovice.cz'
