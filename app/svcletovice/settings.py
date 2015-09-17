@@ -320,11 +320,12 @@ CMSPLUGIN_IFRAME_HEIGHTS = (
 
 TEST_RUNNER = None
 
-#LOGIN_URL = '/prihlaseni/'
-#LOGOUT_URL = '/odhlaseni/'
+# toto funguje až po vytvoření stránky s aplikací Domeček
+LOGIN_URL = 'domecek:user_login'
+LOGOUT_URL = 'domecek:user_logout'
 LOGIN_REDIRECT_URL  = 'domecek:summary'
-
 
 # djangocms_blog settings
 META_SITE_PROTOCOL  = 'https'
 META_SITE_DOMAIN    = 'svcletovice.cz'
+
