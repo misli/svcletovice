@@ -95,7 +95,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
-    'domecek.middleware.SchoolYearMiddleware',
+    'domecek.middleware.DomecekMiddleware',
 )
 
 ROOT_URLCONF = 'svcletovice.urls'
