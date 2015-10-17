@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ls -l app/ static/ \
+| egrep -o '../_sources/(([a-zA-Z][^-]*-)*)([0-9][^/]*)' \
+| sed -r 's|../_sources/(([a-zA-Z][^-]*-)*)([0-9].*)|\1 \3|' \
+| sed 's/- / /' \
+| sort -u \
+| while read PKG VER; do
+    curl 2>/dev/null https://pypi.python.org/pypi/$PKG/ \
+    | egrep -o "/pypi/$PKG/[0-9][^\"']*" \
+    | sed -r "s|/pypi/$PKG/(.*)|\\0 \\1|" \
+    | head -n 1 \
+    | while read URL CUR; do
+        if [ $CUR != $VER ]; then
+            curl 2>/dev/null https://pypi.python.org$URL \
+            | egrep -o "https://pypi.python.org/packages/source/${PKG:0:1}/$PKG/$PKG-$CUR.tar.gz#md5=.{32}"
+        fi
+    done
+done
