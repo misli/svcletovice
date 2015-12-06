@@ -1,1 +1,1 @@
-../../_sources/six-1.9.0/six.py
+../../_sources/six-1.10.0/six.py
