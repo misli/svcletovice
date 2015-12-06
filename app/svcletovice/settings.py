@@ -329,3 +329,6 @@ LOGIN_REDIRECT_URL  = 'domecek:summary'
 META_SITE_PROTOCOL  = 'https'
 META_SITE_DOMAIN    = 'svcletovice.cz'
 
+# overridden translations
+_('instruction on OSH')
+

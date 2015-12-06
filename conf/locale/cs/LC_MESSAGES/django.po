@@ -1,70 +1,119 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SVČ Letokruh Letovice
+# Copyright (C) 2015 Jakub Dorňák
+# This file is distributed under the same license as the svcletovice package.
+# Jakub Dorňák <jakub.dornak@misli.cz>, 2014.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-07 16:46+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2015-12-06 02:00+0100\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app/settings.py:164 app/settings.py:227
-msgid "Default"
-msgstr ""
-
-#: app/settings.py:215
+#: app/settings.py:157 app/settings.py:216 app/svcletovice/settings.py:157
+#: app/svcletovice/settings.py:216
 msgid "Czech"
 msgstr ""
 
-#: app/settings.py:232
+#: app/settings.py:228 app/svcletovice/settings.py:228
+msgid "Default"
+msgstr ""
+
+#: app/settings.py:233 app/svcletovice/settings.py:233
 msgid "Content"
 msgstr ""
 
-#: app/cajovna/admin.py:56
-msgid "All"
+#: app/settings.py:301 app/svcletovice/settings.py:301
+msgid "no class"
 msgstr ""
 
-#: app/cajovna/models.py:22 app/cajovna/models.py:43 app/cajovna/models.py:68
-msgid "Cajovna"
+#: app/settings.py:306 app/svcletovice/settings.py:306
+msgid "200 pixels"
 msgstr ""
 
-#: app/cajovna/models.py:23
-msgid "Supplier"
+#: app/settings.py:307 app/svcletovice/settings.py:307
+msgid "400 pixels"
 msgstr ""
 
-#: app/cajovna/models.py:24
-msgid "Suppliers"
+#: app/settings.py:308 app/svcletovice/settings.py:308
+msgid "800 pixels"
 msgstr ""
 
-#: app/cajovna/models.py:44
-msgid "Category"
+#: app/settings.py:309 app/settings.py:318 app/svcletovice/settings.py:309
+#: app/svcletovice/settings.py:318
+msgid "100 %"
 msgstr ""
 
-#: app/cajovna/models.py:45
-msgid "Categories"
+#: app/settings.py:314 app/svcletovice/settings.py:314
+msgid "150 pixels"
 msgstr ""
 
-#: app/cajovna/models.py:69
-msgid "Drug"
+#: app/settings.py:315 app/svcletovice/settings.py:315
+msgid "300 pixels"
 msgstr ""
 
-#: app/cajovna/models.py:70
-msgid "Drugs"
+#: app/settings.py:316 app/svcletovice/settings.py:316
+msgid "600 pixels"
 msgstr ""
 
-#: templates/404.html:4 templates/404.html.py:7
+#: app/settings.py:317 app/svcletovice/settings.py:317
+msgid "1200 pixels"
+msgstr ""
+
+#: app/settings.py:333 app/svcletovice/settings.py:333
+msgid "instruction on OSH"
+msgstr "poučení o BOZP a seznámení s vnitřním řádem SVČ"
+
+#: templates/404.html:4 templates/404.html.py:5
 msgid "Page not found"
 msgstr ""
 
-#: templates/500.html:4 templates/500.html.py:7
+#: templates/500.html:4 templates/500.html.py:5
 msgid "Unhandled Exception"
+msgstr ""
+
+#: templates/admin/index.html:20
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:37
+msgid "Change"
+msgstr ""
+
+#: templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:55
+msgid "Recent Actions"
+msgstr ""
+
+#: templates/admin/index.html:59
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:74
+msgid "Unknown content"
+msgstr ""
+
+#: templates/domecek/club_list/grouped.html:27
+msgid "Led by"
+msgid_plural "Led by"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/domecek/clubregistration_pdf.html:5
+msgid "Club registration"
+msgstr ""
+
+#: templates/domecek/eventregistration_pdf.html:5
+msgid "Event registration"
 msgstr ""
