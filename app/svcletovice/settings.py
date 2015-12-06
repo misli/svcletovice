@@ -78,7 +78,6 @@ INSTALLED_APPS = (
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
-    'captcha',
     'ganalytics',
 )
 
@@ -243,14 +242,6 @@ CACHES = {
 }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-
-CAPTCHA_FONT_SIZE        = 24
-CAPTCHA_LETTER_ROTATION  = None
-CAPTCHA_BACKGROUND_COLOR = '#ffffff'
-CAPTCHA_FOREGROUND_COLOR = '#001100'
-CAPTCHA_CHALLENGE_FUNCT  = 'captcha.helpers.math_challenge'
-CAPTCHA_NOISE_FUNCTIONS  = ()
-CAPTCHA_FILTER_FUNCTIONS = ()
 
 MIGRATION_MODULES = {
     'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
