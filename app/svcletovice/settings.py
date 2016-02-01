@@ -55,6 +55,7 @@ SERVER_EMAIL = '"WEB SVČ Letokruh Letovice" <admin@svcletovice.cz>'
 # Application definition
 
 INSTALLED_APPS = (
+    'domecek',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,7 +71,6 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'sekizai',
     'filer',
-    'domecek',
     'cmsplugin_iframe2',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
