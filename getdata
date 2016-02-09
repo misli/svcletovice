@@ -2,5 +2,5 @@
 
 NAME="$(basename $(dirname $(realpath $0)))"
 
-rsync -a dahoman:/django/$NAME/data/ data/
+rsync -av dahoman:/django/$NAME/data/ data/
 
