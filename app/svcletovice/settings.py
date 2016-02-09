@@ -43,11 +43,11 @@ DBDEBUG = os.environ.get('DEBUG', False) == 'DB'
 ALLOWED_HOSTS = ['www.svcletovice.cz', '127.0.0.1']
 
 ADMINS = (
-    ('Jakub Dorňák', 'admin@misli.cz'),
+    ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
 )
 MANAGERS = (
-    ('Jakub Dorňák', 'admin@misli.cz'),
-    ('Petr Lizna', 'petr.lizna@ddmletovice.cz'),
+    ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
+    ('Petr Lizna', 'petr.lizna@svcletovice.cz'),
 )
 SERVER_EMAIL = '"WEB SVČ Letokruh Letovice" <admin@svcletovice.cz>'
 
