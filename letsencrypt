@@ -1,0 +1,1 @@
+test -d /etc/letsencrypt/live/svcletovice.cz || /srv/letsencrypt/letsencrypt-auto certonly --webroot -w /django/svcletovice/htdocs -d svcletovice.cz -d www.svcletovice.cz -d svc-letovice.cz -d www.svc-letovice.cz -d svcletokruh.cz -d www.svcletokruh.cz -d svc-letokruh.cz -d www.svc-letokruh.cz -d ddmletovice.cz -d www.ddmletovice.cz
