@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+# detect configuration
+NAME="$(basename $(dirname $(realpath $0)))"
+DJANGO_DIR="/django/$NAME"
+DJANGO_USER="django-$NAME"
+
+RO="$(ls -d $DJANGO_DIR/* | egrep -v /data$)"
+RW="$DJANGO_DIR/data"
+
+
+# add user and group
+id >/dev/null -g $DJANGO_USER || addgroup $DJANGO_USER
+id >/dev/null -u $DJANGO_USER || adduser --home $DJANGO_DIR --shell /bin/false --ingroup $DJANGO_USER $DJANGO_USER
+
+
+# permissions
+chown root:root $DJANGO_DIR
+chmod 0755      $DJANGO_DIR
+
+chown -R $DJANGO_USER:$DJANGO_USER $RW
+chmod -R u=rwX,g=rX,o-rwx $RW
+
+chown -R root:root       $RO
+chmod -R u=rwX,g=rX,o=rX $RO
+
+
+# configs
+if ! [ -e /etc/nginx/sites-enabled/${NAME}.conf ]; then
+    ln -s $DJANGO_DIR/conf/nginx/${NAME}.conf /etc/nginx/sites-enabled/
+    nginx -t && service nginx reload
+fi
+if ! [ -e /etc/uwsgi/apps-enabled/${NAME}.ini ]; then
+    ln -s $DJANGO_DIR/conf/uwsgi/${NAME}.ini  /etc/uwsgi/apps-enabled/
+    service uwsgi restart
+fi
+
+# certificates
+[ -d /srv/letsencrypt ] || git clone https://github.com/letsencrypt/letsencrypt /srv/letsencrypt
+$DJANGO_DIR/letsencrypt
+
+
+# sync db
+$DJANGO_DIR/manage.py migrate --noinput
+
+
+# collect static
+$DJANGO_DIR/manage.py collectstatic --noinput
+
