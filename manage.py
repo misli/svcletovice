@@ -4,16 +4,20 @@ from __future__ import absolute_import, division, generators, nested_scopes, pri
 
 import os
 import sys
-from os.path import dirname, realpath, join
+from os.path import basename, dirname, realpath, join
 
-if __name__ == "__main__":
-    sys.path.insert(0, join(dirname(realpath(__file__)), "app"))
-    os.environ.setdefault("DEBUG", "TEMPLATE")
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "svcletovice.settings")
+PROJECT_DIR  = dirname(realpath(__file__))
+PROJECT_NAME = basename(PROJECT_DIR)
+
+if __name__ == '__main__':
+    sys.path.insert(0, join(PROJECT_DIR, 'app'))
+    os.environ.setdefault('DEBUG', 'TEMPLATE')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', '{}.settings'.format(PROJECT_NAME))
 
     if os.getuid() == 0 and 'collectstatic' not in sys.argv:
+        username = 'django-{}'.format(PROJECT_NAME)
         import pwd, grp
-        user = pwd.getpwnam('django-svcletovice')
+        user = pwd.getpwnam(username)
         groups = [g.gr_gid for g in grp.getgrall() if user.pw_name in g.gr_mem]
         os.setgid(user.pw_gid)
         os.setgroups(groups)
