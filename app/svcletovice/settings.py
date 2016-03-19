@@ -49,7 +49,7 @@ MANAGERS = (
     ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
     ('Petr Lizna', 'petr.lizna@svcletovice.cz'),
 )
-SERVER_EMAIL = '"WEB SVČ Letokruh Letovice" <admin@svcletovice.cz>'
+SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 
 
 # Application definition
