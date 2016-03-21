@@ -5,7 +5,9 @@
 
 {% block branding %}
 <h1 id="site-name">
-    <a href="/" style="display: inline-block; border-radius: 10px; background-color: #73d1ff; padding: 10px 5px 5px 10px;"><img src="{% static 'layout/logo.png' %}" alt="SVČ Letokruh" height="60" /></a>
+    <a href="/" style="display: inline-block; position: relative; top: -5px; border-radius: 5px; background-color: #73d1ff; padding: 3px 10px 5px">
+        <img src="{% static 'layout/logo.png' %}" alt="SVČ Letokruh" height="40" />
+    </a>
     <a href="{% url 'admin:index' %}">Administrace</a>
 </h1>
 {% endblock %}
