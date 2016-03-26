@@ -54,7 +54,7 @@ SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 # Application definition
 
 INSTALLED_APPS = [
-    'domecek',
+    'leprikon',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -96,7 +96,7 @@ MIDDLEWARE_CLASSES = [
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
-    'domecek.middleware.DomecekMiddleware',
+    'leprikon.middleware.LeprikonMiddleware',
 ]
 
 ROOT_URLCONF = 'svcletovice.urls'
@@ -325,9 +325,9 @@ CMSPLUGIN_IFRAME_HEIGHTS = (
 TEST_RUNNER = None
 
 # toto funguje až po vytvoření stránky s aplikací Domeček
-LOGIN_URL = 'domecek:user_login'
-LOGOUT_URL = 'domecek:user_logout'
-LOGIN_REDIRECT_URL  = 'domecek:summary'
+LOGIN_URL = 'leprikon:user_login'
+LOGOUT_URL = 'leprikon:user_logout'
+LOGIN_REDIRECT_URL  = 'leprikon:summary'
 
 # djangocms_blog settings
 META_SITE_PROTOCOL  = 'https'

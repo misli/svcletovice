@@ -104,16 +104,16 @@ msgstr ""
 msgid "Unknown content"
 msgstr ""
 
-#: templates/domecek/club_list/grouped.html:27
+#: templates/leprikon/club_list/grouped.html:27
 msgid "Led by"
 msgid_plural "Led by"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/domecek/clubregistration_pdf.html:5
+#: templates/leprikon/clubregistration_pdf.html:5
 msgid "Club registration"
 msgstr ""
 
-#: templates/domecek/eventregistration_pdf.html:5
+#: templates/leprikon/eventregistration_pdf.html:5
 msgid "Event registration"
 msgstr ""

@@ -25,10 +25,11 @@ Práce s redakčním systémem djangoCMS je poměrně intuitivní.
 Více informací o redakčním systému je k dispozici zde:
 http://www.django-cms.org/en/
 
-## konfigurace rozšíření Domeček
+## konfigurace systému Leprikón
 
-Domeček je rozšíření djangoCMS. V CMS je třeba nejdříve vytvořit stránku, ve které bude domeček umístěný.
+Leprikón je rozšíření djangoCMS. V CMS je třeba nejdříve vytvořit stránku,
+ve které bude aplikace Leprikón umístěný.
 Na našem webu je to stránka *Můj Letokruh*
-V pokročilém nastavení stránky je třeba nastavit *Id* na *domecek*
-a ze seznamu *Aplikace* vybrat *Domeček*.
+V pokročilém nastavení stránky je třeba nastavit *Id* na *leprikon*
+a ze seznamu *Aplikace* vybrat *Leprikón*.
 Po uložení a publikování stránky je třeba restartovat testovací server.
