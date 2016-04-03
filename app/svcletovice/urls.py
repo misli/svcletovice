@@ -17,20 +17,18 @@ Including another URLconf
 from __future__ import absolute_import, division, generators, nested_scopes, print_function, unicode_literals, with_statement
 
 import cms.urls
+
 from django.conf import settings
 from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.i18n import javascript_catalog
 from django.views.static import serve
 
 urlpatterns = [
-    url(r'^jsi18n/(?P<packages>\S+?)/$', javascript_catalog),
     url(r'^admin/', admin.site.urls),
     url(r'^', (cms.urls, None, None)),
 ]
 
 if settings.DEBUG:
-    urlpatterns += [
-        url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    ] + staticfiles_urlpatterns()
+    urlpatterns.append(url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}))
+
