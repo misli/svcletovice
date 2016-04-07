@@ -41,13 +41,13 @@ DBDEBUG = os.environ.get('DEBUG', False) == 'DB'
 
 ALLOWED_HOSTS = ['www.svcletovice.cz', '127.0.0.1']
 
-ADMINS = (
+ADMINS = [
     ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
-)
-MANAGERS = (
+]
+MANAGERS = [
     ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
     ('Hana Sobotková', 'hana.sobotkova@svcletovice.cz'),
-)
+]
 SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 
 
@@ -178,22 +178,22 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'htdocs', 'media')
 
 # Additional locations of static files
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'static'),
-)
+]
 
 SITE_ID = 1
 
-LANGUAGES = (
+LANGUAGES = [
     ('cs', _('Czech')),
-)
+]
 
-LOCALE_PATHS = (
+LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'conf', 'locale'),
-)
+]
 
 
 LOGGING = {
@@ -248,9 +248,9 @@ CMS_LANGUAGES = {
     },
 }
 
-CMS_TEMPLATES = (
+CMS_TEMPLATES = [
     ('default.html', _('Default')),
-)
+]
 
 CMS_PLACEHOLDER_CONF = {
     'content': {
@@ -277,6 +277,8 @@ MIGRATION_MODULES = {
     'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
 }
 
+THUMBNAIL_DEBUG = os.environ.get('DEBUG', False) == 'THUMBNAIL'
+
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
@@ -301,26 +303,26 @@ GANALYTICS_TRACKING_CODE = 'UA-41666766-1'
 PRICE_DECIMAL_PLACES = 0
 
 # set to None to allow any value
-CMSPLUGIN_IFRAME_CLASSES = (
+CMSPLUGIN_IFRAME_CLASSES = [
     (None, _('no class')),
-)
+]
 
 # set to None to allow any value
-CMSPLUGIN_IFRAME_WIDTHS = (
+CMSPLUGIN_IFRAME_WIDTHS = [
     ('200', _('200 pixels')),
     ('400', _('400 pixels')),
     ('800', _('800 pixels')),
     ('100%', _('100 %')),
-)
+]
 
 # set to None to allow any value
-CMSPLUGIN_IFRAME_HEIGHTS = (
+CMSPLUGIN_IFRAME_HEIGHTS = [
     ('150', _('150 pixels')),
     ('300', _('300 pixels')),
     ('600', _('600 pixels')),
     ('1200', _('1200 pixels')),
     ('100%', _('100 %')),
-)
+]
 
 TEST_RUNNER = None
 
@@ -328,10 +330,6 @@ TEST_RUNNER = None
 LOGIN_URL = 'leprikon:user_login'
 LOGOUT_URL = 'leprikon:user_logout'
 LOGIN_REDIRECT_URL  = 'leprikon:summary'
-
-# djangocms_blog settings
-META_SITE_PROTOCOL  = 'https'
-META_SITE_DOMAIN    = 'svcletovice.cz'
 
 # overridden translations
 _('instruction on OSH')
