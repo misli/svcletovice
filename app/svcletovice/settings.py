@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
     'ganalytics',
+    'django_mailbox',
 ]
 
 MIDDLEWARE_CLASSES = [
