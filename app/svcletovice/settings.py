@@ -56,11 +56,13 @@ SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 INSTALLED_APPS = [
     'leprikon',
     'cms_articles',
+    'cms_articles.import_wordpress',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.redirects',
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'djangocms_text_ckeditor',
@@ -85,6 +87,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'cms.middleware.utils.ApphookReloadMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
