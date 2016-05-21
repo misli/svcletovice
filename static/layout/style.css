@@ -68,3 +68,26 @@ img.right {
 .page_title {
     background-color: #eeffbf;
 }
+
+#container {
+    width: 1060px;
+}
+
+#quickmenu {
+    width: 350px;
+}
+
+#quickmenu .viewport,
+#quickmenu .viewport .overview {
+    width: 350px;
+}
+
+#home-content {
+    width: 745px;
+}
+
+.col_201 {
+    width: 201px;
+    margin: 0px 20px;
+}
+

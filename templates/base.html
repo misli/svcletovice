@@ -13,7 +13,9 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
     <!-- Stylesheet -->
+    {% if request.path != '/' %}
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+    {% endif %}
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/style.css' %}" />
     <link rel="stylesheet" type="text/css" media="print" href="{% static 'layout/peekaboo/css/print.css' %}" />
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/css/nivo-slider.css' %}"/>
@@ -105,29 +107,72 @@
         </div>
         <!-- Header end -->
 
+        {% block base_content %}{% endblock %}
 
-        <!--Main begin-->
-        <div id="main" class="round_8 clearfix">
+        <!-- Footer begin -->
+        <div id="footer" class="round_8 clearfix">
 
-            {% if messages %}
-            <div class='messages'>
-                {% for message in messages %}
-                    <div class='alert alert-info'>
-                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-                        {{ message }}
-                    </div>
-                {% endfor %}
+            <!-- Footer widgets begin -->
+            <div class="col_201">
+                <div id="pkb_widget_contact-3" class="footer-widget pkb_widget_contact">
+                    <h4 class="replace">Kontakt</h4>
+                    <address>
+                        Letokruh - středisko volného času Letovice, příspěvková organizace<br>
+                        Českobratrská 137/5<br>
+                        679 61 Letovice<br>
+                        <br>
+                        <a href="mailto:info@svcletovice.cz" title="Poslat email">info@svcletovice.cz</a>
+                    </address>
+                    <script type="text/javascript">
+                        jQuery(function($){
+                            $(".modalmap").colorbox({iframe:true, innerWidth:"50%", innerHeight:"50%", href:"&iwloc=A&output=embed" });
+                        });
+                    </script>
+                </div>
             </div>
-            {% endif %}
 
-            <!--Content begin-->
-            <!--div id="content"-->
-                {% block base_content %}{% endblock %}
-            <!--/div-->
+            <div class="col_201">
+                <div id="text-2" class="footer-widget widget_text">
+                    <h4 class="replace">Navštivte také</h4>
+                    <div class="textwidget">
+                        <p><a href="http://www.zsletovice.cz" target="_blank">ZŠ Letovice</a></p>
+                        <p><a href="http://www.mks-letovice.cz/knihovna/" target="_blank">Knihovna Letovice</a></p>
+                        <p><a href="http://www.letovice.net/" target="_blank">Město Letovice</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col_201">
+                <div id="text-12" class="footer-widget widget_text">
+                    <h4 class="replace">Spolupracujeme</h4>
+                    <div class="textwidget">
+                        <p><a href="http://http://www.stredni-skola.cz" target="_blank">Masarykova SŠ Letovice</a></p>
+                        <p><a href="http://http://www.cssletovice.cz"target="_blank">Centrum sociálních služeb města Letovice</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col_240">
+                <div id="pkb_widget_ad245-2" class="footer-widget pkb_widget_ad245">
+                    <a href="https://www.svcletovice.cz/dekujeme/">
+                        <img class="shadow-light" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/03/Záloha_děkujeme.jpg" width="243" height="158" />
+                    </a>
+                </div>
+            </div>
+            <!-- Footer widgets end -->
+
+            <!-- Footer-bottom begin -->
+            <div id="footer-bottom">
+
+                <!-- Footer Note begin -->
+                <div id="footer-note" class="right"><small>Copyright (c) 2016 SVČ Letokruh Letovice</small></div>
+                <!-- Footer Note end -->
+
+            </div>
+            <!-- Footer-bottom end -->
 
         </div>
-        <!--Main end-->
-
+        <!-- Footer end -->
 
     </div>
     <!-- Container end -->

@@ -255,11 +255,27 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = [
     ('default.html', _('Default')),
+    ('home.html', _('Home page')),
+]
+
+# templates used to render plugin article
+CMS_ARTICLES_PLUGIN_ARTICLE_TEMPLATES = [
+    ('default', _('Default')),
+    ('home', _('Home page')),
+]
+
+# templates used to render plugin articles
+CMS_ARTICLES_PLUGIN_ARTICLES_TEMPLATES = [
+    ('default', _('Default')),
+    ('home', _('Home page')),
 ]
 
 CMS_PLACEHOLDER_CONF = {
     'content': {
         'name': _('Content'),
+    },
+    'sidebar': {
+        'name': _('Sidebar'),
     },
 }
 

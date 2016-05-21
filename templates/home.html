@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block page_title %}{% page_attribute "page_title" %}{% endblock %}
+{% block meta_description %}{% page_attribute "meta_description" %}{% endblock %}
+
+{% block base_content %}
+
+<!-- Slide Container begin -->
+{% addtoblock 'js' %}
+    <script type="text/javascript">
+        jQuery(function($){
+            $(window).load(function() {
+                $('#slider').nivoSlider({
+                    animSpeed: 600,
+                    pauseTime: 3000,
+                    controlNav:false,
+                    effect: 'fade'
+                });
+            });
+        });
+    </script>
+{% endaddtoblock %}
+
+<div id="slide-container"  class="clearfix">
+
+    <!-- Slider Wrapper begin -->
+    <div id="slider-wrapper" class="left">
+        <div id="slider" class="nivoSlider">
+            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/05/IMG_9922-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="IMG_9922" title="" /> 
+            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/04/HAPP1-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="HAPP" title="" /> 
+            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/04/filip-venda-zuzka-andrea-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="filip, venda, zuzka, andrea" title="" /> 
+            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/04/to-se-mi-líbí-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="to se mi líbí" title="" /> 
+            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2015/12/holky-certoviny-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="holky-certoviny" title="" /> 
+            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2015/10/21-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="2" title="" /> 
+        </div>
+    </div>
+
+    <!-- Slider Wrapper end -->
+
+    <!-- Quickmenu begin -->
+    <div id="quickmenu" class="left">
+        <h2 class="replace">Nabízíme</h2>
+        <div class="viewport">
+            <ul id="menu-nabidka" class="overview">
+                <li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109">
+                    <a class="menu-box round_4" title="Přehled kroužků" href="/krouzky/">
+                        <span class="title">Kroužky</span><br/>
+                        Přehled kroužků<span class="arrow">&nbsp;</span>
+                    </a>
+                </li>
+                <li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108">
+                    <a class="menu-box round_4" title="Naše akce" href="/akce/">
+                        <span class="title">Akce</span><br/>
+                        Naše akce<span class="arrow">&nbsp;</span>
+                    </a>
+                </li>
+                <li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110">
+                    <a class="menu-box round_4" title="Tábory a pobyty nejen pro děti" href="/tabory/">
+                        <span class="title">Tábory a pobyty</span><br/>
+                        Tábory a pobyty nejen pro děti<span class="arrow">&nbsp;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a class="buttons prev" href="#">Prev</a> <a class="buttons next" href="#">Next</a>
+    </div>
+    <!-- Quickmenu end -->
+    
+</div>
+<!-- Slide Container end -->
+
+<!--Main begin-->
+<div id="main" class="round_8 clearfix">
+
+    {% if messages %}
+    <div class='messages'>
+        {% for message in messages %}
+            <div class='alert alert-info'>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Home Content begin-->
+    <div id="home-content" class="left">
+        {% block content %}{% placeholder "content" %}{% endblock %}
+    </div>
+    <!--Home Content end-->
+
+    <!-- Sidebar begin-->    
+    <div  id="sidebar" class="left">
+        {% block sidebar %}{% placeholder "sidebar" %}{% endblock %}
+    </div>
+    <!-- Sidebar end--> 
+       
+</div>
+<!--Main end-->
+
+{% endblock %}
