@@ -4,6 +4,7 @@
 {% block title %}{% article_attribute "title" %}{% endblock %}
 {% block page_title %}{% article_attribute "page_title" %}{% endblock %}
 {% block meta_description %}{% article_attribute "meta_description" %}{% endblock %}
+{% block breadcrumb %}{% show_article_breadcrumb %}{% endblock %}
 {% block content %}
     {% article_attribute "image" as image %}
     {% if image %}
