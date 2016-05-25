@@ -1,5 +1,5 @@
 
-.box {
+.box, .article_preview {
     padding: 15px;
     margin-top: 15px;
     margin-bottom: 35px;
@@ -38,7 +38,7 @@
     padding: 10px;
 }
 
-.box-content:after {
+.box-content:after, .article_preview:after {
     content: '';
     display: block;
     clear: both;
@@ -58,7 +58,7 @@
     margin-bottom: 5px;
 }
 
-img.right {
+img.right, .article_preview img {
     text-align: left;
     float: right;
     margin-left: 15px;
