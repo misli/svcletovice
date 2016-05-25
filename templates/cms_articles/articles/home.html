@@ -1,3 +1,9 @@
+<div class="row">
 {% for article in articles %}
 {% include 'cms_articles/article/home.html' %}
+{% if forloop.counter|divisibleby:3 %}
+</div>
+<div class="row">
+{% endif %}
 {% endfor %}
+</div>

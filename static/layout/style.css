@@ -38,7 +38,7 @@
     padding: 10px;
 }
 
-.box-content:after, .article_preview:after {
+.box-content:after, .article_preview:after, .row {
     content: '';
     display: block;
     clear: both;
