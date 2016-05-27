@@ -269,6 +269,7 @@ CMS_ARTICLES_PLUGIN_ARTICLE_TEMPLATES = [
 CMS_ARTICLES_PLUGIN_ARTICLES_TEMPLATES = [
     ('default', _('Default')),
     ('home', _('Home page')),
+    ('home-3x', _('Home page - 3x')),
 ]
 
 CMS_PLACEHOLDER_CONF = {
