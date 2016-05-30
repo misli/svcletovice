@@ -1,0 +1,16 @@
+{% load cms_articles thumbnail staticfiles %}
+
+{% if article %}
+<div class="landing_col">
+    <h3 class="replace">{{ article.get_menu_title }}</h3>
+    {% with image=article.get_image %}
+    {% if image %}
+    <div class="thumbnail_60_left" style="background: url(&quot;{% thumbnail image 60x60 %}&quot;) repeat;"></div>
+    {% endif %}
+    {% endwith %}
+    {{ article.get_description | safe }}
+    <a class="fancy small cta" href="{{ article.get_absolute_url }}">
+        Více informací <img class="arrow" src="{% static 'layout/peekaboo/img/nav-right-arrow.png' %}"/>
+    </a>
+</div>
+{% endif %}
