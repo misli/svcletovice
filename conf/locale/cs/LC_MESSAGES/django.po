@@ -7,71 +7,96 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-21 17:38+0200\n"
+"POT-Creation-Date: 2016-06-08 17:18+0200\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app/settings.py:199 app/settings.py:248 app/svcletovice/settings.py:199
-#: app/svcletovice/settings.py:248
+#: app/settings.py:196 app/settings.py:245 app/svcletovice/settings.py:196
+#: app/svcletovice/settings.py:245
 msgid "Czech"
 msgstr "Čeština"
 
-#: app/settings.py:260 app/svcletovice/settings.py:260
+#: app/settings.py:257 app/settings.py:263 app/settings.py:270
+#: app/svcletovice/settings.py:257 app/svcletovice/settings.py:263
+#: app/svcletovice/settings.py:270
 msgid "Default"
 msgstr "Výchozí"
 
-#: app/settings.py:261 app/svcletovice/settings.py:261
+#: app/settings.py:258 app/settings.py:264 app/settings.py:271
+#: app/svcletovice/settings.py:258 app/svcletovice/settings.py:264
+#: app/svcletovice/settings.py:271
 msgid "Home page"
 msgstr "Domovská stránka"
 
-#: app/settings.py:266 app/svcletovice/settings.py:266
+#: app/settings.py:265 app/settings.py:272 app/svcletovice/settings.py:265
+#: app/svcletovice/settings.py:272
+msgid "Home page - 3x"
+msgstr "Domovská stránka - 3x"
+
+#: app/settings.py:277 app/svcletovice/settings.py:277
 msgid "Content"
 msgstr "Obsah"
 
-#: app/settings.py:269 app/svcletovice/settings.py:269
+#: app/settings.py:280 app/svcletovice/settings.py:280
 msgid "Sidebar"
 msgstr "Boční panel"
 
-#: app/settings.py:319 app/svcletovice/settings.py:319
+#: app/settings.py:283 app/svcletovice/settings.py:283
+msgid "Footer - column 1"
+msgstr "Patička - první sloupec"
+
+#: app/settings.py:286 app/svcletovice/settings.py:286
+msgid "Footer - column 2"
+msgstr "Patička - druhý sloupec"
+
+#: app/settings.py:289 app/svcletovice/settings.py:289
+msgid "Footer - column 3"
+msgstr "Patička - třetí sloupec"
+
+#: app/settings.py:292 app/svcletovice/settings.py:292
+msgid "Footer - column 4"
+msgstr "Patička - čtvrtý sloupec"
+
+#: app/settings.py:342 app/svcletovice/settings.py:342
 msgid "no class"
 msgstr "žádná třída"
 
-#: app/settings.py:324 app/svcletovice/settings.py:324
+#: app/settings.py:347 app/svcletovice/settings.py:347
 msgid "200 pixels"
 msgstr "200 pixelů"
 
-#: app/settings.py:325 app/svcletovice/settings.py:325
+#: app/settings.py:348 app/svcletovice/settings.py:348
 msgid "400 pixels"
 msgstr "400 pixelů"
 
-#: app/settings.py:326 app/svcletovice/settings.py:326
+#: app/settings.py:349 app/svcletovice/settings.py:349
 msgid "800 pixels"
 msgstr "800 pixelů"
 
-#: app/settings.py:327 app/settings.py:336 app/svcletovice/settings.py:327
-#: app/svcletovice/settings.py:336
+#: app/settings.py:350 app/settings.py:359 app/svcletovice/settings.py:350
+#: app/svcletovice/settings.py:359
 msgid "100 %"
 msgstr "100 %"
 
-#: app/settings.py:332 app/svcletovice/settings.py:332
+#: app/settings.py:355 app/svcletovice/settings.py:355
 msgid "150 pixels"
 msgstr "150 pixelů"
 
-#: app/settings.py:333 app/svcletovice/settings.py:333
+#: app/settings.py:356 app/svcletovice/settings.py:356
 msgid "300 pixels"
 msgstr "300 pixelů"
 
-#: app/settings.py:334 app/svcletovice/settings.py:334
+#: app/settings.py:357 app/svcletovice/settings.py:357
 msgid "600 pixels"
 msgstr "600 pixelů"
 
-#: app/settings.py:335 app/svcletovice/settings.py:335
+#: app/settings.py:358 app/svcletovice/settings.py:358
 msgid "1200 pixels"
 msgstr "1200 pixelů"
 
-#: app/settings.py:347 app/svcletovice/settings.py:347
+#: app/settings.py:370 app/svcletovice/settings.py:370
 msgid "instruction on OSH"
 msgstr "poučení o BOZP a seznámení s vnitřním řádem SVČ"
 

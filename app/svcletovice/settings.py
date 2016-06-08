@@ -279,6 +279,18 @@ CMS_PLACEHOLDER_CONF = {
     'sidebar': {
         'name': _('Sidebar'),
     },
+    'footer-1': {
+        'name': _('Footer - column 1'),
+    },
+    'footer-2': {
+        'name': _('Footer - column 2'),
+    },
+    'footer-3': {
+        'name': _('Footer - column 3'),
+    },
+    'footer-4': {
+        'name': _('Footer - column 4'),
+    },
 }
 
 CACHES = {
