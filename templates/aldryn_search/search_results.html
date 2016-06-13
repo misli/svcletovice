@@ -1,0 +1,26 @@
+{% extends "default.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<form action="." method="get" class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="input-group">
+            <input class="form-control" type="text" name="q" value="{% if form.q.value %}{{ form.q.value }}{% endif %}" placeholder="{% trans 'enter search term' %}"/>
+            <span class="input-group-btn">
+                <input class="btn btn-default" type="submit" value="{% trans 'Search' %}">
+            </span>
+        </div>
+    </div>
+</form>
+
+{% if form.q.value %}
+<div class="search-results">
+	<ul>
+		{% include "aldryn_search/includes/search_items.html" %}
+	</ul>
+</div>
+
+{% include "aldryn_search/includes/pagination.html" with obj_string=_('results') %}
+{% endif %}
+{% endblock %}

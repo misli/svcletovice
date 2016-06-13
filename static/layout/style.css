@@ -91,3 +91,29 @@ img.right, .article_preview img {
     margin: 0px 20px;
 }
 
+#nav-wrapper {
+    bottom: 45px;
+}
+
+#search-form {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.search-results ul, .pagenav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pagenav li {
+    display: inline;
+}
+
+/* #slide-container is broken with bootstrap's box-sizing boder-box */
+#slide-container * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+

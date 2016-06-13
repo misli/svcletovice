@@ -1,0 +1,28 @@
+{% load i18n leprikon_tags %}
+
+{% if page_obj.has_other_pages %}
+<div class="pagenav">
+    {% with from=page_obj.start_index until=page_obj.end_index count=page_obj.paginator.count %}
+    {% blocktrans %}displaying {{ from }} – {{ until }} of {{ count }}{% endblocktrans %}
+    {% endwith %}
+	<ul>
+		{% if page_obj.has_previous %}
+		<li class="prev"><a href="?{% query_string 'page' page_obj.previous_page_number %}">&laquo; {% trans "previous" %}</a></li>
+		{% endif %}
+		{% for page_num in page_obj.page_range %}
+		{% if page_num %}
+		{% if page_obj.number == page_num %}
+		<li class="page active"><span>{{ page_num }}</span></li>
+		{% else %}
+		<li class="page"><a href="?{% query_string 'page' page_num %}">{{ page_num }}</a></li>
+		{% endif %}
+		{% else %}
+		<li class="jumper"><span>...</span></li>
+		{% endif %}
+		{% endfor %}
+		{% if page_obj.has_next %}
+		<li class="prev"><a href="?{% query_string 'page' page_obj.next_page_number %}">{% trans "next" %} &raquo;</a></li>
+		{% endif %}
+	</ul>
+</div>
+{% endif %}

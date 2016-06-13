@@ -83,6 +83,8 @@ INSTALLED_APPS = [
     'cmsplugin_filer_video',
     'ganalytics',
     'django_mailbox',
+    'haystack',
+    'aldryn_search',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -368,4 +370,16 @@ LOGIN_REDIRECT_URL  = 'leprikon:summary'
 
 # overridden translations
 _('instruction on OSH')
+
+# search settings
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'data', 'search'),
+    },
+    'cs': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'data', 'search'),
+    },
+}
 
