@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags %}
+
+{% block page_title %}{% page_attribute "page_title" %}{% endblock %}
+{% block meta_description %}{% page_attribute "meta_description" %}{% endblock %}
+
+{% block base_content %}
+
+<!--Main begin-->
+<div id="main" class="round_8 clearfix">
+
+    {% if messages %}
+    <div class='messages'>
+        {% for message in messages %}
+            <div class='alert alert-info'>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Breadcrumb begin -->
+    <div class="pad-left-10">
+        <div id="pkb-crumbs">
+            {% block breadcrumb %}{% show_breadcrumb %}{% endblock %}
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!--Content begin-->
+    <div class="page_title round_6">
+        <h1 class="replace">{% block title %}{% page_attribute "title" %}{% endblock %}</h1>
+    </div>
+
+    <div id="home-content" class=" left">
+        {% block content %}{% placeholder "content" %}{% endblock %}
+    </div>
+    <!--Content end-->
+
+    <!-- Sidebar begin-->
+    <div  id="sidebar" class="left">
+        <div id="sub-menu" class="sidebar-widget widget_archive">
+            <ul>
+                {% show_menu 1 %}
+            </ul>
+        </div>
+        {% block sidebar %}{% placeholder "sidebar" %}{% endblock %}
+    </div>
+    <!-- Sidebar end-->
+
+</div>
+<!--Main end-->
+
+{% endblock %}

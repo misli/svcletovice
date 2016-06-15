@@ -257,6 +257,7 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = [
     ('default.html', _('Default')),
+    ('with_submenu.html', _('With submenu')),
     ('home.html', _('Home page')),
 ]
 
