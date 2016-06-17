@@ -99,6 +99,7 @@ img.right, .article_preview img {
     position: absolute;
     right: 0;
     top: 15px;
+    width: 400px;
 }
 
 .search-results ul, .pagenav ul {
