@@ -7,35 +7,12 @@
 {% block base_content %}
 
 <!-- Slide Container begin -->
-{% addtoblock 'js' %}
-    <script type="text/javascript">
-        jQuery(function($){
-            $(window).load(function() {
-                $('#slider').nivoSlider({
-                    animSpeed: 600,
-                    pauseTime: 3000,
-                    controlNav:false,
-                    effect: 'fade'
-                });
-            });
-        });
-    </script>
-{% endaddtoblock %}
-
 <div id="slide-container"  class="clearfix">
 
     <!-- Slider Wrapper begin -->
     <div id="slider-wrapper" class="left">
-        <div id="slider" class="nivoSlider">
-            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/05/IMG_9922-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="IMG_9922" title="" /> 
-            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/04/HAPP1-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="HAPP" title="" /> 
-            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/04/filip-venda-zuzka-andrea-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="filip, venda, zuzka, andrea" title="" /> 
-            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2016/04/to-se-mi-líbí-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="to se mi líbí" title="" /> 
-            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2015/12/holky-certoviny-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="holky-certoviny" title="" /> 
-            <img width="680" height="320" src="https://www.svcletovice.cz/wordpress/wp-content/uploads/2015/10/21-680x320.jpg" class="attachment-slide-image size-slide-image wp-post-image" alt="2" title="" /> 
-        </div>
+        {% block slider %}{% placeholder "slider" %}{% endblock %}
     </div>
-
     <!-- Slider Wrapper end -->
 
     <!-- Quickmenu begin -->

@@ -1,0 +1,26 @@
+{% load i18n thumbnail sekizai_tags %}
+
+{% addtoblock 'js' %}
+<script type="text/javascript">
+    jQuery(function($){
+        $(window).load(function() {
+            $('.nivoSlider').nivoSlider({
+                animSpeed: 600,
+                pauseTime: 3000,
+                controlNav:false,
+                effect: 'fade'
+            });
+        });
+    });
+</script>
+{% endaddtoblock %}
+
+<!-- start: slideshow -->
+<div class="nivoSlider" id="folder_{{ object.id }}">
+    {% for image in folder_images %}
+        <img src="{% thumbnail image.file 680x320 crop="True" upscale="True" %}"/>
+        <img width="680" height="320" src="{% thumbnail image.file 680x320 crop="True" upscale="True" %}" alt="" title="" />
+    {% endfor %}
+</div>
+<!-- end: slideshow -->
+
