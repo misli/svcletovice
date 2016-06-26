@@ -271,6 +271,7 @@ CMS_ARTICLES_PLUGIN_ARTICLE_TEMPLATES = [
 # templates used to render plugin articles
 CMS_ARTICLES_PLUGIN_ARTICLES_TEMPLATES = [
     ('default', _('Default')),
+    ('archive', _('Archive')),
     ('home', _('Home page')),
     ('home-3x', _('Home page - 3x')),
 ]

@@ -1,0 +1,17 @@
+{% load i18n cms_articles %}
+
+{% for year_archive in archive.years %}
+<li>
+    <a href="{{ year_archive.url }}">{{ year_archive.year }}</a>
+    {% if year_archive.active %}
+    <ul class="archive_months">
+        {% for month_archive in year_archive.months %}
+        <li>
+            <a href="{{ month_archive.url }}">{{ month_archive.date|date:"F Y" }} ({{ month_archive.articles.count }})</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}
+

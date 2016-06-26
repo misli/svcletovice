@@ -43,6 +43,7 @@
         <div id="sub-menu" class="sidebar-widget widget_archive">
             <ul>
                 {% show_menu 1 100 0 1 %}
+                {% block submenu %}{% placeholder "submenu" %}{% endblock %}
             </ul>
         </div>
         {% block sidebar %}{% placeholder "sidebar" %}{% endblock %}
