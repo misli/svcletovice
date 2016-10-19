@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     'cmsplugin_filer_video',
     'ganalytics',
     'django_mailbox',
+    'social.apps.django_app.default',
     'haystack',
     'aldryn_search',
 ]
@@ -122,6 +123,8 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
             'debug': os.environ.get('DEBUG', False) == 'TEMPLATE',
         },
@@ -376,3 +379,35 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.google.GooglePlusAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    # Send a validation email to the user to verify its email address.
+    # 'social.pipeline.mail.mail_validation',
+    'social.pipeline.social_auth.associate_by_email',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)
+
+LOGIN_REDIRECT_URL  = '/muj-letokruh/'
+
+from .secrets import (
+    SOCIAL_AUTH_FACEBOOK_KEY,
+    SOCIAL_AUTH_FACEBOOK_SECRET,
+    SOCIAL_AUTH_FACEBOOK_SCOPE,
+
+    SOCIAL_AUTH_GOOGLE_PLUS_KEY,
+    SOCIAL_AUTH_GOOGLE_PLUS_SECRET,
+    SOCIAL_AUTH_GOOGLE_PLUS_SCOPE,
+)

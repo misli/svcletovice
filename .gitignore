@@ -1,7 +1,4 @@
 *.pyc
 *.pyo
-.ipython
-.project
-.pydevproject
-.settings
 *~
+app/svcletovice/secrets.py

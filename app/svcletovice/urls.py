@@ -23,8 +23,11 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.views.static import serve
 
+from social.apps.django_app import urls as social_urls
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('^social/', (social_urls, 'social', 'social')),
     url(r'^', (cms.urls, None, None)),
 ]
 
