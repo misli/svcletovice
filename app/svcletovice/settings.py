@@ -402,6 +402,8 @@ SOCIAL_AUTH_PIPELINE = (
 
 LOGIN_REDIRECT_URL  = '/muj-letokruh/'
 
+COUNTRIES_FIRST = ['CZ', 'SK']
+
 from .secrets import (
     SOCIAL_AUTH_FACEBOOK_KEY,
     SOCIAL_AUTH_FACEBOOK_SECRET,
