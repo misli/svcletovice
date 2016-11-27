@@ -122,3 +122,8 @@ img.right, .article_preview img {
     float: left;
     margin: 0 2em 2em 0;
 }
+
+input[type="checkbox"].form-control {
+    width: auto;
+}
+
