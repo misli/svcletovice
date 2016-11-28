@@ -1,0 +1,11 @@
+{% load i18n thumbnail sekizai_tags staticfiles %}
+
+<div class="cmsplugin_filer_folder_list" id="folder_{{ instance.id }}">
+    {% for image in folder_images %}
+    <div class="col-xs-4">
+        <a class="shadow gallery" href="{% thumbnail image.file 1500x1500 %}" rel="shadowbox[folder-{{ instance.id }}];player=img;">
+            <img class="alignnone size-medium" alt="{{ image.name }}" src="{% thumbnail image 300x300 %}" />
+        </a>
+    </div>
+    {% endfor %}
+</div>
