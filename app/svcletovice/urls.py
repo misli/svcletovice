@@ -24,10 +24,12 @@ from django.contrib import admin
 from django.views.static import serve
 
 from social.apps.django_app import urls as social_urls
+import cmsplugin_survey.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^social/', (social_urls, 'social', 'social')),
+    url(r'^social/', (social_urls, 'social', 'social')),
+    url(r'^survey/', (cmsplugin_survey.urls, 'survey', 'survey')),
     url(r'^', (cms.urls, None, None)),
 ]
 

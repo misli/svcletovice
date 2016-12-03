@@ -86,6 +86,7 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     'haystack',
     'aldryn_search',
+    'cmsplugin_survey',
 ]
 
 MIDDLEWARE_CLASSES = [
