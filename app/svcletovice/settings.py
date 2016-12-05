@@ -416,8 +416,13 @@ from .secrets import (
 SOCIAL_AUTH_FACEBOOK_SCOPE   = ['email']
 SOCIAL_AUTH_GOOGLE_PLUS_SCOPE   = ['profile', 'email']
 
-CMSPLUGIN_FILER_FOLDER_STYLE_CHOICES = (
+CMSPLUGIN_FILER_FOLDER_STYLE_CHOICES = [
     ('gallery', _('Gallery')),
     ('homepage', _('Homepage'))
-)
+]
+
+CMSPLUGIN_SURVEY_TEMPLATES = [
+    ('default', _('default')),
+    ('without_summary', _('without summary')),
+]
 
