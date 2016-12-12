@@ -141,3 +141,7 @@ a.gallery img {
     vertical-align: middle;
 }
 
+.survey-value a {
+    border-radius: 3px;
+}
+
