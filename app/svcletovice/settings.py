@@ -245,15 +245,10 @@ LOGGING = {
 #####################
 
 CMS_LANGUAGES = {
-    1: [
-        {
-            'code': 'cs',
-            'name': _('Czech'),
-        },
-    ],
+    SITE_ID: [{'code': l[0], 'name': l[1]} for l in LANGUAGES],
     'default': {
         'public': True,
-        'fallbacks': ['cs'],
+        'fallbacks': [LANGUAGE_CODE],
         'hide_untranslated': True,
         'redirect_on_fallback': True,
     },
