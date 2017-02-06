@@ -355,7 +355,7 @@ CMSPLUGIN_IFRAME_HEIGHTS = [
 
 TEST_RUNNER = None
 
-# toto funguje až po vytvoření stránky s aplikací Domeček
+# toto funguje až po vytvoření stránky s aplikací Leprikón
 LOGIN_URL = 'leprikon:user_login'
 LOGOUT_URL = 'leprikon:user_logout'
 LOGIN_REDIRECT_URL  = 'leprikon:summary'
@@ -421,3 +421,7 @@ CMSPLUGIN_SURVEY_TEMPLATES = [
     ('without_summary', _('without summary')),
 ]
 
+if os.environ.get('OLD_MIGRATIONS', False):
+    MIGRATION_MODULES = {
+        'leprikon': 'leprikon.migrations_0_1',
+    }
