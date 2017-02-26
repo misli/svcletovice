@@ -124,6 +124,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
+                'cms_articles.context_processors.cms_articles',
                 'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect',
             ],
