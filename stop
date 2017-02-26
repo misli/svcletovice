@@ -1,0 +1,5 @@
+#!/bin/bash
+
+NAME="$(basename $(dirname $(realpath $0)))"
+
+service uwsgi stop $NAME
