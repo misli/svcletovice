@@ -2,5 +2,4 @@
 
 NAME="$(basename $(dirname $(realpath $0)))"
 
-kill -SIGHUP $(</var/run/uwsgi/app/$NAME/pid)
-
+service uwsgi restart $NAME
