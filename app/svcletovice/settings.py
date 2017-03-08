@@ -87,6 +87,7 @@ INSTALLED_APPS = [
     'haystack',
     'aldryn_search',
     'cmsplugin_survey',
+    'verified_email_field',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -380,6 +381,7 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.Facebook2OAuth2',
     'social.backends.google.GooglePlusAuth',
     'django.contrib.auth.backends.ModelBackend',
+    'verified_email_field.auth.VerifiedEmailBackend',
 )
 
 SOCIAL_AUTH_PIPELINE = (

@@ -25,11 +25,13 @@ from django.views.static import serve
 
 from social.apps.django_app import urls as social_urls
 import cmsplugin_survey.urls
+import verified_email_field.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^social/', (social_urls, 'social', 'social')),
     url(r'^survey/', (cmsplugin_survey.urls, 'survey', 'survey')),
+    url(r'^verified-email-field/', (verified_email_field.urls, 'verified-email-field', 'verified-email-field')),
     url(r'^', (cms.urls, None, None)),
 ]
 
