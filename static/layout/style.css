@@ -145,3 +145,7 @@ a.gallery img {
     border-radius: 3px;
 }
 
+.btn-primary {
+    background-color: #116611;
+    border-color: #116611;
+}
