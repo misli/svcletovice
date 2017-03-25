@@ -83,7 +83,7 @@ INSTALLED_APPS = [
     'cmsplugin_filer_video',
     'ganalytics',
     'django_mailbox',
-    'social.apps.django_app.default',
+    'social_django',
     'haystack',
     'aldryn_search',
     'cmsplugin_survey',
@@ -126,8 +126,8 @@ TEMPLATES = [
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
                 'cms_articles.context_processors.cms_articles',
-                'social.apps.django_app.context_processors.backends',
-                'social.apps.django_app.context_processors.login_redirect',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
             'debug': os.environ.get('DEBUG', False) == 'TEMPLATE',
         },
@@ -372,12 +372,12 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.Facebook2OAuth2',
-    'social.backends.google.GooglePlusAuth',
-    'django.contrib.auth.backends.ModelBackend',
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.Facebook2OAuth2',
+    'social_core.backends.google.GooglePlusAuth',
     'verified_email_field.auth.VerifiedEmailBackend',
-)
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',

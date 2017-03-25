@@ -16,23 +16,20 @@ Including another URLconf
 
 from __future__ import absolute_import, division, generators, nested_scopes, print_function, unicode_literals, with_statement
 
-import cms.urls
-
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.static import serve
 
-from social.apps.django_app import urls as social_urls
 import cmsplugin_survey.urls
 import verified_email_field.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^social/', (social_urls, 'social', 'social')),
-    url(r'^survey/', (cmsplugin_survey.urls, 'survey', 'survey')),
-    url(r'^verified-email-field/', (verified_email_field.urls, 'verified-email-field', 'verified-email-field')),
-    url(r'^', (cms.urls, None, None)),
+    url(r'^social/', include('social_django.urls', namespace='social')),
+    url(r'^survey/', include('cmsplugin_survey.urls', namespace='survey')),
+    url(r'^verified-email-field/', include('verified_email_field.urls', namespace='verified-email-field')),
+    url(r'^', include('cms.urls')),
 ]
 
 if settings.DEBUG:
