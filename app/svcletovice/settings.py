@@ -373,26 +373,11 @@ HAYSTACK_CONNECTIONS = {
 }
 
 AUTHENTICATION_BACKENDS = [
-    'social_core.backends.facebook.Facebook2OAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GooglePlusAuth',
     'verified_email_field.auth.VerifiedEmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
-
-SOCIAL_AUTH_PIPELINE = (
-    'social.pipeline.social_auth.social_details',
-    'social.pipeline.social_auth.social_uid',
-    'social.pipeline.social_auth.auth_allowed',
-    'social.pipeline.social_auth.social_user',
-    'social.pipeline.user.get_username',
-    # Send a validation email to the user to verify its email address.
-    # 'social.pipeline.mail.mail_validation',
-    'social.pipeline.social_auth.associate_by_email',
-    'social.pipeline.user.create_user',
-    'social.pipeline.social_auth.associate_user',
-    'social.pipeline.social_auth.load_extra_data',
-    'social.pipeline.user.user_details'
-)
 
 LOGIN_REDIRECT_URL  = '/muj-letokruh/'
 
