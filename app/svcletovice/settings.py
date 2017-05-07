@@ -56,7 +56,7 @@ SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 INSTALLED_APPS = [
     'leprikon',
     'cms_articles',
-    'cms_articles.import_wordpress',
+    #'cms_articles.import_wordpress',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
