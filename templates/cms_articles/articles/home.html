@@ -1,21 +1,5 @@
-<div class="col_201">
 {% for article in articles %}
-    {% if forloop.counter|add:2|divisibleby:3 %}
+    <div class="col_201">
         {% include 'cms_articles/article_preview_home.html' %}
-    {% endif %}
+    </div>
 {% endfor %}
-</div>
-<div class="col_201">
-{% for article in articles %}
-    {% if forloop.counter|add:1|divisibleby:3 %}
-        {% include 'cms_articles/article_preview_home.html' %}
-    {% endif %}
-{% endfor %}
-</div>
-<div class="col_201">
-{% for article in articles %}
-    {% if forloop.counter|divisibleby:3 %}
-        {% include 'cms_articles/article_preview_home.html' %}
-    {% endif %}
-{% endfor %}
-</div>
