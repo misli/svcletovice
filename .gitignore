@@ -1,4 +1,5 @@
 *.pyc
 *.pyo
 *~
-app/svcletovice/secrets.py
+htdocs/media
+mysql

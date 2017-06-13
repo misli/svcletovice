@@ -1,1 +1,0 @@
-svcletovice/settings.py

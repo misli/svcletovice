@@ -1,1 +1,0 @@
-tar -czf htdocs/static/_sources.tar.gz --exclude='*.py[co]' $(ls -l ../_sources/getpackage app/ static/ | egrep -o '../_sources/.*')

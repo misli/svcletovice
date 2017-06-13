@@ -1,5 +1,0 @@
-#!/bin/bash
-
-find app -name *.pyc -print0 -o -name *.pyo -print0 \
-| xargs -0 rm
-python -O -m compileall app

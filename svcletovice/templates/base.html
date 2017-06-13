@@ -13,7 +13,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" media="all"   href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="all"   href="{% static 'leprikon/lib/bootstrap.min.css' %}"/>
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/style.css' %}" />
     <link rel="stylesheet" type="text/css" media="print" href="{% static 'layout/peekaboo/css/print.css' %}" />
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/css/nivo-slider.css' %}"/>
@@ -30,8 +30,7 @@
     -->
     <link rel='stylesheet' id='shadowbox-css-css'    href='{% static "shadowbox-js/css/shadowbox.css" %}' type='text/css' media='screen' />
     <link rel='stylesheet' id='shadowbox-extras-css' href='{% static "shadowbox-js/css/extras.css" %}' type='text/css' media='screen' />
-    <!--script src="{% static 'jquery/jquery.min.js' %}"></script-->
-    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js?ver=1.7.1'></script>
+    <script type='text/javascript' src='{% static "leprikon/lib/jquery.min.js" %}'></script>
     <script type='text/javascript' src='{% static "layout/peekaboo/js/superfish-compile.js" %}'></script>
     <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery.colorbox-min.js" %}'></script>
     <script type='text/javascript' src='{% static "layout/peekaboo/js/jquery-ui-1.8.13.custom.min.js" %}'></script>
@@ -207,7 +206,7 @@
 </script>
 <!-- End Shadowbox JS -->
 
-<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'leprikon/lib/bootstrap.min.js' %}"></script>
 
 {% render_block "js" %}
 

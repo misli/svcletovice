@@ -1,0 +1,54 @@
+version: '2'
+services:
+
+  leprikon:
+    image: misli/svcletovice
+    environment:
+      DATABASE_ENGINE: django.db.backends.mysql
+      DATABASE_HOST: ''
+      DATABASE_NAME: svcletovice
+      DATABASE_PASSWORD: svcletovicepassword
+      DATABASE_USER: svcletovice
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.sidekicks: mysql,mongo,rocketchat
+    tty: true
+    volumes:
+    - /data/svcletovice/media:/app/htdocs/media:z
+    volumes_from:
+    - mysql
+
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: svcletovice
+      MYSQL_PASSWORD: svcletovicepassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: svcletovice
+    labels:
+      io.rancher.container.pull_image: always
+    volumes:
+    - /var/run/mysqld
+    - /data/svcletovice/mysql:/var/lib/mysql:z
+
+  mongo:
+    image: mongo
+    command:
+    - mongod
+    - --smallfiles
+    - --oplogSize
+    - '128'
+    labels:
+      io.rancher.container.pull_image: always
+    volumes:
+    - /tmp
+    - /data/svcletovice/mongo:/data/db:z
+
+  rocketchat:
+    image: rocketchat/rocket.chat
+    environment:
+      MONGO_URL: mongodb://mongo:27017/rocketchat
+      PORT: '3000'
+      ROOT_URL: https://chat.svcletovice.cz/
+    labels:
+      io.rancher.container.pull_image: always

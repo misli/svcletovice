@@ -1,29 +1,30 @@
 # svcletovice
 Web [svcletovice.cz](http://www.svcletovice.cz/)
 
-## stažení a spuštění vývojové instance
+## instalace
 
 ```shell
-curl https://www.svcletovice.cz/static/_sources.tar.gz | tar -xz
 git clone git@github.com:misli/svcletovice.git
 cd svcletovice
-./manage.py migrate
-./manage.py createsuperuser
-./manage.py runserver
+sudo docker-compose up -d
+sudo docker-compose exec svcletovice leprikon migrate
+sudo docker-compose exec svcletovice leprikon createsuperuser
 ```
 
-V prvním kroku se stáhne a rozbalí archiv všech balíčků, na kterých aplikace závisí.
-Druhý krok naklonuje repozitář s aplikací.
-Ve třetím kroku přejdeme do adresáře s aplikací.
-Čtvrtý krok vytvoří databázi.
-Pátý vytvoří uživatele
-a šestý spustí testovací server.
+První krok naklonuje repozitář s aplikací.
+Ve druhém kroku přejdeme do adresáře s aplikací.
+Třetí krok vytvoří databázi.
+Čtvrtý vytvoří uživatele
+a spustí testovací server.
+
+Server bude dostupný na adrese
+[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
 ## vytvoření stránek
 
 Práce s redakčním systémem djangoCMS je poměrně intuitivní.
 Více informací o redakčním systému je k dispozici zde:
-http://www.django-cms.org/en/
+[http://www.django-cms.org/en/](http://www.django-cms.org/en/)
 
 ## konfigurace systému Leprikón
 

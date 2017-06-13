@@ -14,24 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 
-from __future__ import absolute_import, division, generators, nested_scopes, print_function, unicode_literals, with_statement
-
+from leprikon.site.urls import *
 from django.conf import settings
-from django.conf.urls import url, include
-from django.contrib import admin
-from django.views.static import serve
 
-import cmsplugin_survey.urls
-import verified_email_field.urls
-
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^social/', include('social_django.urls', namespace='social')),
+urlpatterns += [
     url(r'^survey/', include('cmsplugin_survey.urls', namespace='survey')),
-    url(r'^verified-email-field/', include('verified_email_field.urls', namespace='verified-email-field')),
-    url(r'^', include('cms.urls')),
 ]
 
 if settings.DEBUG:
-    urlpatterns.append(url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}))
-
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    urlpatterns += staticfiles_urlpatterns()

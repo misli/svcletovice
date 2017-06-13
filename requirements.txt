@@ -1,0 +1,7 @@
+Whoosh
+aldryn-search
+cmsplugin-iframe2
+cmsplugin-survey
+django-cms-articles
+django-mailbox
+leprikon
