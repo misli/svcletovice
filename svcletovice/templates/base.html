@@ -1,4 +1,4 @@
-{% load i18n cms_tags menu_tags sekizai_tags staticfiles ganalytics %}
+{% load i18n cms_tags menu_tags rocketchat sekizai_tags staticfiles ganalytics %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="cs-CZ">
 
@@ -209,6 +209,8 @@
 <script type="text/javascript" src="{% static 'leprikon/lib/bootstrap.min.js' %}"></script>
 
 {% render_block "js" %}
+
+{% livechat %}
 
 </body>
 </html>
