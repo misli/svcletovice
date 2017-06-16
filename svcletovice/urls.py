@@ -17,9 +17,9 @@ Including another URLconf
 from leprikon.site.urls import *
 from django.conf import settings
 
-urlpatterns += [
+urlpatterns = [
     url(r'^survey/', include('cmsplugin_survey.urls', namespace='survey')),
-]
+] + urlpatterns
 
 if settings.DEBUG:
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
