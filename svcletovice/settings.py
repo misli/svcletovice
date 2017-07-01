@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'cmsplugin_survey',
 ]
 
+TEMPLATES[0]['OPTIONS']['context_processors'].append('cms_articles.context_processors.cms_articles')
+
 MIDDLEWARE_CLASSES = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 ] + MIDDLEWARE_CLASSES
