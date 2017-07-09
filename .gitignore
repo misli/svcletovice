@@ -1,5 +1,6 @@
 *.pyc
 *.pyo
 *~
+env
 htdocs/media
 mysql
