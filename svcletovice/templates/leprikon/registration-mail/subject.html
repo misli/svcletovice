@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<p>{% blocktrans %}Hello,<br/>
+thank You for submitting registration.{% endblocktrans %}</p>
+
+{% if object.subject.full %}
+<p>Kapacita {{ object.subject.subject_type.name_genitiv }} je bohužel již naplněna, prosíme zatím neplaťte, ozveme se vám.</p>
+{% endif %}
+
+<p>
+    {% trans 'Use the link below to see and manage your registrations:' %}<br/>
+    <a href="https://{{ site.domain }}{% url 'leprikon:registration_list' %}">
+        https://{{ site.domain }}{% url 'leprikon:registration_list' %}
+    </a>
+</p>
+
+<p>{{ site.name }}</p>
