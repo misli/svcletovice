@@ -126,6 +126,7 @@ LOGIN_REDIRECT_URL  = '/muj-letokruh/'
 
 # overridden translations
 _('instruction on OSH')
+_('Registering is currently not allowed.')
 
 # search settings
 HAYSTACK_CONNECTIONS = {
