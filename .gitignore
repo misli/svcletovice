@@ -1,6 +1,11 @@
 *.pyc
 *.pyo
+*.swp
 *~
-env
-htdocs/media
-mysql
+/.ipython
+/data
+/docker-compose.*.yml
+/env
+/htdocs/media
+/htdocs/static
+/mysql*

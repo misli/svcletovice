@@ -2,5 +2,4 @@
 
 NAME="$(basename $(dirname $(realpath $0)))"
 
-rsync -av dahoman:/django/$NAME/data/ data/
-
+sudo rsync -av --delete gira:/data/$NAME/data/ data/

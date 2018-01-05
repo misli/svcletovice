@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-
-"""
-Django settings for svcletovice project.
-"""
-
 from django.utils.translation import ugettext_lazy as _
 from leprikon.site.settings import *
 
@@ -32,15 +26,11 @@ INSTALLED_APPS = [
     'cmsplugin_survey',
 ]
 
-TEMPLATES[0]['OPTIONS']['context_processors'].append('cms_articles.context_processors.cms_articles')
-
 MIDDLEWARE_CLASSES = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 ] + MIDDLEWARE_CLASSES
 
 ROOT_URLCONF = 'svcletovice.urls'
-
-WSGI_APPLICATION = 'svcletovice.wsgi.application'
 
 CMS_TEMPLATES = [
     ('default.html', _('Default')),
@@ -118,11 +108,6 @@ CMSPLUGIN_IFRAME_HEIGHTS = [
     ('1200', _('1200 pixels')),
     ('100%', _('100 %')),
 ]
-
-# toto funguje až po vytvoření stránky s aplikací Leprikón
-LOGIN_URL = 'leprikon:user_login'
-LOGOUT_URL = 'leprikon:user_logout'
-LOGIN_REDIRECT_URL  = '/muj-letokruh/'
 
 # overridden translations
 _('instruction on OSH')

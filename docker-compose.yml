@@ -1,54 +1,49 @@
-version: '2'
+version: '3.4'
 services:
 
   leprikon:
-    image: misli/svcletovice
+    image: misli/svcletovice:testing
+    depends_on:
+      - db
+      - memcached
     environment:
+      DEBUG: TEMPLATE
+      SECRET_KEY: secretkey
       DATABASE_ENGINE: django.db.backends.mysql
       DATABASE_HOST: ''
       DATABASE_NAME: svcletovice
       DATABASE_PASSWORD: svcletovicepassword
       DATABASE_USER: svcletovice
-    labels:
-      io.rancher.container.pull_image: always
-      io.rancher.sidekicks: mysql,mongo,rocketchat
-    tty: true
+      MEMCACHED_LOCATION: memcached:11211
+    ports:
+      - 127.0.0.1:80:80
+    restart: unless-stopped
     volumes:
-    - /data/svcletovice/media:/app/htdocs/media:z
-    volumes_from:
-    - mysql
+      - ./.ipython:/root/.ipython:z
+      - ./svcletovice:/app/svcletovice:ro
+      - ./data:/app/data:z
+      - ./media:/app/htdocs/media:z
+      - db:/var/run/mysqld:z
 
-  mysql:
+  db:
     image: mariadb
     environment:
       MYSQL_DATABASE: svcletovice
       MYSQL_PASSWORD: svcletovicepassword
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_USER: svcletovice
-    labels:
-      io.rancher.container.pull_image: always
+    ports:
+      - 127.0.0.1:3306:3306
+    restart: unless-stopped
     volumes:
-    - /var/run/mysqld
-    - /data/svcletovice/mysql:/var/lib/mysql:z
+      - db:/var/run/mysqld:z
+      - ./mysql:/var/lib/mysql:z
 
-  mongo:
-    image: mongo
-    command:
-    - mongod
-    - --smallfiles
-    - --oplogSize
-    - '128'
-    labels:
-      io.rancher.container.pull_image: always
-    volumes:
-    - /tmp
-    - /data/svcletovice/mongo:/data/db:z
+  memcached:
+    image: memcached
+    ports:
+      - 127.0.0.1:11211:11211
+    restart: unless-stopped
 
-  rocketchat:
-    image: rocketchat/rocket.chat
-    environment:
-      MONGO_URL: mongodb://mongo:27017/rocketchat
-      PORT: '3000'
-      ROOT_URL: https://chat.svcletovice.cz/
-    labels:
-      io.rancher.container.pull_image: always
+volumes:
+  db:

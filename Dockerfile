@@ -1,4 +1,5 @@
-FROM leprikon/leprikon
+ARG LEPRIKON_TAG=latest
+FROM leprikon/leprikon:$LEPRIKON_TAG
 
 MAINTAINER Jakub Dorňák <jakub.dornak@misli.com>
 
@@ -12,7 +13,6 @@ COPY htdocs/__maintenance__.html /app/htdocs/__maintenance__.html
 COPY conf/nginx.conf /app/conf/nginx.conf
 
 ENV SITE_MODULE=svcletovice
-ENV PYTHONPATH=/app
 
 # run this command at the end of any dockerfile based on this one
 RUN leprikon collectstatic --no-input
