@@ -4,5 +4,6 @@ cmsplugin-iframe2
 cmsplugin-survey
 django-cms-articles
 django-mailbox
+djangocms-column-fork
 djangocms-video
 leprikon

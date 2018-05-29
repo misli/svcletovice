@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'haystack',
     'aldryn_search',
     'cmsplugin_survey',
+    'djangocms_column',
     'djangocms_video',
 ]
 
