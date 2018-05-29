@@ -1,4 +1,5 @@
 Whoosh
+aldryn-bootstrap3
 aldryn-search
 cmsplugin-iframe2
 cmsplugin-survey
