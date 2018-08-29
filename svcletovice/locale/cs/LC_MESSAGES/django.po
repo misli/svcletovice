@@ -7,113 +7,123 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-07 13:29+0200\n"
+"POT-Creation-Date: 2018-08-29 20:14+0200\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:46 settings.py:53 settings.py:60
+#: settings.py:39 settings.py:46 settings.py:53
 msgid "Default"
 msgstr "Výchozí"
 
-#: settings.py:47
+#: settings.py:40
 msgid "With submenu"
 msgstr "S podmenu"
 
-#: settings.py:48 settings.py:54 settings.py:62
+#: settings.py:41 settings.py:47 settings.py:55
 msgid "Home page"
 msgstr "Domovská stránka"
 
-#: settings.py:55 settings.py:63
+#: settings.py:48 settings.py:56
 msgid "Home page - 3x"
 msgstr "Domovská stránka - 3x"
 
-#: settings.py:61
+#: settings.py:54
 msgid "Archive"
 msgstr "Archiv"
 
-#: settings.py:68
+#: settings.py:61
 msgid "Content"
 msgstr "Obsah"
 
-#: settings.py:71
+#: settings.py:64
 msgid "Sidebar"
 msgstr "Boční panel"
 
-#: settings.py:74
+#: settings.py:67
 msgid "Footer - column 1"
 msgstr "Patička - první sloupec"
 
-#: settings.py:77
+#: settings.py:70
 msgid "Footer - column 2"
 msgstr "Patička - druhý sloupec"
 
-#: settings.py:80
+#: settings.py:73
 msgid "Footer - column 3"
 msgstr "Patička - třetí sloupec"
 
-#: settings.py:83
+#: settings.py:76
 msgid "Footer - column 4"
 msgstr "Patička - čtvrtý sloupec"
 
-#: settings.py:102
+#: settings.py:95
 msgid "no class"
 msgstr "žádná třída"
 
-#: settings.py:107
+#: settings.py:100
 msgid "200 pixels"
 msgstr "200 pixelů"
 
-#: settings.py:108
+#: settings.py:101
 msgid "400 pixels"
 msgstr "400 pixelů"
 
-#: settings.py:109
+#: settings.py:102
 msgid "800 pixels"
 msgstr "800 pixelů"
 
-#: settings.py:110 settings.py:119
+#: settings.py:103 settings.py:112
 msgid "100 %"
 msgstr "100 %"
 
-#: settings.py:115
+#: settings.py:108
 msgid "150 pixels"
 msgstr "150 pixelů"
 
-#: settings.py:116
+#: settings.py:109
 msgid "300 pixels"
 msgstr "300 pixelů"
 
-#: settings.py:117
+#: settings.py:110
 msgid "600 pixels"
 msgstr "600 pixelů"
 
-#: settings.py:118
+#: settings.py:111
 msgid "1200 pixels"
 msgstr "1200 pixelů"
 
-#: settings.py:128
+#: settings.py:116
 msgid "instruction on OSH"
 msgstr "poučení o BOZP a seznámení s vnitřním řádem SVČ"
 
-#: settings.py:129
+#: settings.py:117
 msgid "Registering is currently not allowed."
 msgstr "Přihlašování bohužel není momentálně povoleno."
 
-#: settings.py:144
+#: settings.py:118
+#, python-format
+msgid ""
+"The capacity of this %(subject_type)s has already been filled. You may "
+"register anyway, but the registration may not be approved. We will inform "
+"You."
+msgstr ""
+"Kapacita %(subject_type)s je bohužel již naplněna. Můžete se přihlásit, ale "
+"zatím neplaťte, ozveme se vám."
+
+#: settings.py:133
 msgid "Gallery"
 msgstr "Galerie"
 
-#: settings.py:145
+#: settings.py:134
 msgid "Homepage"
 msgstr "Domovská stránka"
 
-#: settings.py:149
+#: settings.py:138
 msgid "default"
 msgstr "Výchozí"
 
-#: settings.py:150
+#: settings.py:139
 msgid "without summary"
 msgstr "bez souhrnu"
 
@@ -124,6 +134,35 @@ msgstr "Stránka nenalezena"
 #: templates/500.html:4 templates/500.html:5
 msgid "Unhandled Exception"
 msgstr "Neznámá chyba"
+
+#: templates/admin/index.html:20
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:37
+msgid "Change"
+msgstr ""
+
+#: templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:55
+msgid "Recent actions"
+msgstr ""
+
+#: templates/admin/index.html:59
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:74
+msgid "Unknown content"
+msgstr ""
 
 #: templates/aldryn_search/includes/pagination.html:6
 #, python-format
@@ -175,15 +214,3 @@ msgstr ""
 #: templates/leprikon/registration-mail/subject.html:11
 msgid "Use the link below to see and manage your registrations:"
 msgstr "Pomocí následujícího odkazu můžete spravovat své přihlášky:"
-
-#: templates/leprikon/subject_registration_form.html:19
-msgid "Participant"
-msgstr "Účastník"
-
-#: templates/leprikon/subject_registration_form.html:47
-msgid "Parents"
-msgstr "Zástupci"
-
-#: templates/leprikon/subject_registration_form.html:83
-msgid "Legal Agreement"
-msgstr "Právní ujednání"

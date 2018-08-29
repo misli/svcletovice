@@ -115,6 +115,7 @@ CMSPLUGIN_IFRAME_HEIGHTS = [
 # overridden translations
 _('instruction on OSH')
 _('Registering is currently not allowed.')
+_('The capacity of this %(subject_type)s has already been filled. You may register anyway, but the registration may not be approved. We will inform You.')
 
 # search settings
 HAYSTACK_CONNECTIONS = {
