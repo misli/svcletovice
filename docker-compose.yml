@@ -22,7 +22,7 @@ services:
       - ./.ipython:/root/.ipython:z
       - ./svcletovice:/app/svcletovice:ro
       - ./data:/app/data:z
-      - ./media:/app/htdocs/media:z
+      - ./htdocs/media:/app/htdocs/media:z
       - db:/var/run/mysqld:z
 
   db:
