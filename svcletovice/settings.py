@@ -29,9 +29,9 @@ INSTALLED_APPS = [
     'djangocms_video',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
-] + MIDDLEWARE_CLASSES
+] + MIDDLEWARE
 
 ROOT_URLCONF = 'svcletovice.urls'
 
