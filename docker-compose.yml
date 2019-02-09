@@ -2,48 +2,81 @@ version: '3.4'
 services:
 
   leprikon:
-    image: misli/svcletovice:testing
+    image: misli/svcletovice
+    build: .
     depends_on:
-      - db
       - memcached
+      - mysql
+      - smtp
     environment:
-      DEBUG: TEMPLATE
       SECRET_KEY: secretkey
       DATABASE_ENGINE: django.db.backends.mysql
       DATABASE_HOST: ''
       DATABASE_NAME: svcletovice
       DATABASE_PASSWORD: svcletovicepassword
       DATABASE_USER: svcletovice
+      EMAIL_HOST: smtp
+      EMAIL_HOST_PASSWORD: smtppassword
+      EMAIL_HOST_USER: muj-letokruh@svcletovice.cz
+      EMAIL_SUBJECT_PREFIX: '[Letokruh]'
       MEMCACHED_LOCATION: memcached:11211
+      ROCKETCHAT_URL: https://chat.svcletovice.cz
+      SERVER_EMAIL: '"SVČ Letokruh" <muj-letokruh@svcletovice.cz>'
     ports:
-      - 127.0.0.1:80:80
-    restart: unless-stopped
+      - 127.0.0.1:10000:80
     volumes:
-      - ./.ipython:/root/.ipython:z
-      - ./svcletovice:/app/svcletovice:ro
-      - ./data:/app/data:z
-      - ./htdocs/media:/app/htdocs/media:z
-      - db:/var/run/mysqld:z
+      - ./.ipython:/root/.ipython
+      - ./data:/app/data
+      - ./media:/app/htdocs/media
+      - mysql:/var/run/mysqld
 
-  db:
+  memcached:
+    image: memcached
+
+  mongo:
+    image: mongo:3-jessie
+    command: mongod --smallfiles --oplogSize 128 --replSet rs0
+    hostname: mongo
+    volumes:
+      - /tmp
+      - ./mongo:/data/db
+
+  mysql:
     image: mariadb
     environment:
       MYSQL_DATABASE: svcletovice
       MYSQL_PASSWORD: svcletovicepassword
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_USER: svcletovice
-    ports:
-      - 127.0.0.1:3306:3306
-    restart: unless-stopped
     volumes:
-      - db:/var/run/mysqld:z
-      - ./mysql:/var/lib/mysql:z
+      - mysql:/var/run/mysqld
+      - ./mysql:/var/lib/mysql
 
-  memcached:
-    image: memcached
+  rocketchat:
+    image: rocketchat/rocket.chat
+    command: bash -c 'for i in `seq 1 30`; do node main.js && s=$$? && break || s=$$?; echo "Tried $$i times. Waiting 5 secs..."; sleep 5; done; (exit $$s)'
+    depends_on:
+      - mongo
+      - smtp
+    environment:
+      MONGO_URL: mongodb://mongo:27017/rocketchat
+      MONGO_OPLOG_URL: mongodb://mongo:27017/local
+      PORT: '3000'
+      ROOT_URL: https://chat.svcletovice.cz
     ports:
-      - 127.0.0.1:11211:11211
-    restart: unless-stopped
+    - 127.0.0.1:10001:3000/tcp
+    volumes:
+    - ./uploads:/app/uploads
+
+  smtp:
+    image: catatnight/postfix
+    environment:
+      maildomain: svcletovice.cz
+      smtp_user: muj-letokruh@svcletovice.cz:smtppassword
+    stdin_open: true
+    volumes:
+    - ./dkim:/etc/opendkim/domainkeys
+    tty: true
 
 volumes:
-  db:
+  mysql:

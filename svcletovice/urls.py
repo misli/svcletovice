@@ -20,7 +20,3 @@ from django.conf import settings
 urlpatterns = [
     url(r'^survey/', include('cmsplugin_survey.urls', namespace='survey')),
 ] + urlpatterns
-
-if settings.DEBUG:
-    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-    urlpatterns += staticfiles_urlpatterns()

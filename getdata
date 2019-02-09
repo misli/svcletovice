@@ -1,5 +1,0 @@
-#!/bin/bash
-
-NAME="$(basename $(dirname $(realpath $0)))"
-
-sudo rsync -av --delete gira:/data/$NAME/data/ data/
