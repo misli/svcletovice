@@ -21,7 +21,6 @@ INSTALLED_APPS = [
 ] + INSTALLED_APPS + [
     'django.contrib.redirects',
     'django_mailbox',
-    'haystack',
     'aldryn_bootstrap3',
     'aldryn_search',
     'cmsplugin_survey',
