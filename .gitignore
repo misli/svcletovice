@@ -8,4 +8,5 @@
 /env
 /htdocs/media
 /htdocs/static
+/media
 /mysql*
