@@ -42,7 +42,7 @@
     <div  id="sidebar" class="left">
         <div id="sub-menu" class="sidebar-widget widget_archive">
             <ul>
-                {% show_menu 1 100 0 1 %}
+                {% show_menu 1 100 0 1 'menu/menu.html' 'CMSMenu,LeprikonMenu' %}
                 {% block submenu %}{% placeholder "submenu" %}{% endblock %}
             </ul>
         </div>
