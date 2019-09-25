@@ -9,18 +9,17 @@ services:
       - mysql
       - smtp
     environment:
-      SECRET_KEY: secretkey
       DATABASE_ENGINE: django.db.backends.mysql
       DATABASE_HOST: ''
       DATABASE_NAME: svcletovice
-      DATABASE_PASSWORD: svcletovicepassword
+      DATABASE_PASSWORD: dbpassword
       DATABASE_USER: svcletovice
       EMAIL_HOST: smtp
-      EMAIL_HOST_PASSWORD: smtppassword
-      EMAIL_HOST_USER: muj-letokruh@svcletovice.cz
+      EMAIL_HOST_PASSWORD: emailpassword
+      EMAIL_HOST_USER: svcletovice
       EMAIL_SUBJECT_PREFIX: '[Letokruh]'
       MEMCACHED_LOCATION: memcached:11211
-      ROCKETCHAT_URL: https://chat.svcletovice.cz
+      SECRET_KEY: secretkey
       SERVER_EMAIL: '"SVČ Letokruh" <muj-letokruh@svcletovice.cz>'
     ports:
       - 127.0.0.1:10000:80
@@ -33,46 +32,22 @@ services:
   memcached:
     image: memcached
 
-  mongo:
-    image: mongo:3-jessie
-    command: mongod --smallfiles --oplogSize 128 --replSet rs0
-    hostname: mongo
-    volumes:
-      - /tmp
-      - ./mongo:/data/db
-
   mysql:
     image: mariadb
     environment:
       MYSQL_DATABASE: svcletovice
-      MYSQL_PASSWORD: svcletovicepassword
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_PASSWORD: dbpassword
+      MYSQL_ROOT_PASSWORD: rootdbpassword
       MYSQL_USER: svcletovice
     volumes:
       - mysql:/var/run/mysqld
       - ./mysql:/var/lib/mysql
 
-  rocketchat:
-    image: rocketchat/rocket.chat
-    command: bash -c 'for i in `seq 1 30`; do node main.js && s=$$? && break || s=$$?; echo "Tried $$i times. Waiting 5 secs..."; sleep 5; done; (exit $$s)'
-    depends_on:
-      - mongo
-      - smtp
-    environment:
-      MONGO_URL: mongodb://mongo:27017/rocketchat
-      MONGO_OPLOG_URL: mongodb://mongo:27017/local
-      PORT: '3000'
-      ROOT_URL: https://chat.svcletovice.cz
-    ports:
-    - 127.0.0.1:10001:3000/tcp
-    volumes:
-    - ./uploads:/app/uploads
-
   smtp:
     image: catatnight/postfix
     environment:
       maildomain: svcletovice.cz
-      smtp_user: muj-letokruh@svcletovice.cz:smtppassword
+      smtp_user: svcletovice:emailpassword
     stdin_open: true
     volumes:
     - ./dkim:/etc/opendkim/domainkeys
