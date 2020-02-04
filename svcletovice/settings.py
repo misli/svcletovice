@@ -16,9 +16,9 @@ SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 # Application definition
 INSTALLED_APPS = [
     'svcletovice',
+] + INSTALLED_APPS + [
     'cms_articles',
     'cmsplugin_iframe2',
-] + INSTALLED_APPS + [
     'django.contrib.redirects',
     'django_mailbox',
     'aldryn_bootstrap3',

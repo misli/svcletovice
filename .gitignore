@@ -6,5 +6,7 @@
 /dkim
 /docker-compose.*.yml
 /media
+/mongo*
 /mysql*
+/uploads
 /wordpress
