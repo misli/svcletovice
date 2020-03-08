@@ -18,15 +18,19 @@ services:
       EMAIL_HOST_PASSWORD: emailpassword
       EMAIL_HOST_USER: svcletovice
       EMAIL_SUBJECT_PREFIX: '[Letokruh]'
+      LEPRIKON_DOMAIN: www.svcletovice.cz
+      LEPRIKON_DOMAIN_ALIASES: 'svcletovice.cz www.svc-letovice.cz svc-letovice.cz www.svcletokruh.cz svcletokruh.cz www.svc-letokruh.cz svc-letokruh.cz www.ddmletovice.cz ddmletovice.cz'
       MEMCACHED_LOCATION: memcached:11211
       SECRET_KEY: secretkey
       SERVER_EMAIL: '"SVČ Letokruh" <muj-letokruh@svcletovice.cz>'
     ports:
-      - 127.0.0.1:10000:80
+      - 80:80
+      - 443:443
     volumes:
-      - ./.ipython:/root/.ipython
       - ./data:/app/data
+      - ./letsencrypt:/etc/letsencrypt
       - ./media:/app/htdocs/media
+      - ./wordpress:/app/htdocs/wordpress
       - mysql:/var/run/mysqld
 
   memcached:
@@ -50,7 +54,7 @@ services:
       smtp_user: svcletovice:emailpassword
     stdin_open: true
     volumes:
-    - ./dkim:/etc/opendkim/domainkeys
+      - ./dkim:/etc/opendkim/domainkeys
     tty: true
 
 volumes:
