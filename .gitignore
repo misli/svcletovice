@@ -7,3 +7,4 @@
 /docker-compose.*.yml
 /media
 /mysql*
+/wordpress
