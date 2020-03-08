@@ -22,16 +22,13 @@ services:
       EMAIL_SUBJECT_PREFIX: '[Letokruh]'
       LEPRIKON_CHAT_NAME: 'Letokruh'
       LEPRIKON_CHAT_USERNAME: letokruh
-      LEPRIKON_DOMAIN: www.svcletovice.cz
-      LEPRIKON_DOMAIN_ALIASES: 'svcletovice.cz www.svc-letovice.cz svc-letovice.cz www.svcletokruh.cz svcletokruh.cz www.svc-letokruh.cz svc-letokruh.cz www.ddmletovice.cz ddmletovice.cz'
       CACHE_LOCATION: unix:///var/run/redis/redis.sock
       MONGO_URL: mongodb://mongo:27017/rocketchat
       ROCKETCHAT_API_URL: http://chat:3000/_chat
       SECRET_KEY: secretkey
       SERVER_EMAIL: '"SVČ Letokruh" <muj-letokruh@svcletovice.cz>'
     ports:
-      - 80:80
-      - 443:443
+      - 127.0.0.1:10000:80
     volumes:
       - ./data:/app/data
       - ./letsencrypt:/etc/letsencrypt
