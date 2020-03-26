@@ -127,6 +127,7 @@ HAYSTACK_CONNECTIONS = {
         'PATH': os.path.join(BASE_DIR, 'data', 'search'),
     },
 }
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 CMSPLUGIN_FILER_FOLDER_STYLE_CHOICES = [
     ('gallery', _('Gallery')),
