@@ -1,36 +1,37 @@
 # svcletovice
 Web [svcletovice.cz](http://www.svcletovice.cz/)
 
+Aplikace se skládá z několika komponent, které mezi sebou komunikují.
+Některé komponenty jsou součástí aplikačního docker image,
+jiné komponenty poskytují docker image třetích stran.
+
+Aplikační docker image je definovaný souborem `Dockerfile`.
+
+Vzájemné vztahy všech containerů, z nichž se aplikace skládá,
+jsou definovány pomocí souboru `docker-compose.yml`.
+
+Definice tajných parametrů (hesla, API klíče, atd.)
+patří do souboru `docker-compose.override.yml`,
+který pochopitelně není součástí veřejně dostupného repozitáře.
+
 ## instalace
 
+Pro běh aplikace je potřeba nainstalovaný
+[docker](https://docs.docker.com/install/) a
+[docker-compose](https://docs.docker.com/compose/install/).
+Samozřejmě je možné aplikaci provozovat v cloudovém prostředí.
+
+## spuštění pomocí docker-compose
+
 ```shell
-git clone git@github.com:misli/svcletovice.git
-cd svcletovice
-sudo docker-compose up -d
-sudo docker-compose exec svcletovice leprikon migrate
-sudo docker-compose exec svcletovice leprikon createsuperuser
+docker-compose up -d
 ```
 
-První krok naklonuje repozitář s aplikací.
-Ve druhém kroku přejdeme do adresáře s aplikací.
-Třetí krok vytvoří databázi.
-Čtvrtý vytvoří uživatele
-a spustí testovací server.
+## užitečné odkazy
+[Leprikón](https://github.com/leprikon-cz/leprikon/)
 
-Server bude dostupný na adrese
-[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+[djangoCMS](http://docs.django-cms.org/en/latest/)
 
-## vytvoření stránek
+[docker-compose](https://docs.docker.com/compose/)
 
-Práce s redakčním systémem djangoCMS je poměrně intuitivní.
-Více informací o redakčním systému je k dispozici zde:
-[http://www.django-cms.org/en/](http://www.django-cms.org/en/)
-
-## konfigurace systému Leprikón
-
-Leprikón je rozšíření djangoCMS. V CMS je třeba nejdříve vytvořit stránku,
-ve které bude aplikace Leprikón umístěný.
-Na našem webu je to stránka *Můj Letokruh*
-V pokročilém nastavení stránky je třeba nastavit *Id* na *leprikon*
-a ze seznamu *Aplikace* vybrat *Leprikón*.
-Po uložení a publikování stránky je třeba restartovat testovací server.
+[docker](https://docs.docker.com/)
