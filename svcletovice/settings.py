@@ -3,13 +3,7 @@
 from django.utils.translation import ugettext_lazy as _
 from leprikon.site.settings import *
 
-ADMINS = [
-    ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
-]
-MANAGERS = [
-    ('Jakub Dorňák', 'jakub.dornak@svcletovice.cz'),
-    ('Ivana Dlapová', 'ivana.dlapova@svcletovice.cz'),
-]
+
 SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
 
 
