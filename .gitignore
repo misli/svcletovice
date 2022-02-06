@@ -8,5 +8,6 @@
 /media
 /mongo*
 /mysql*
+/redis*
 /uploads
 /wordpress
