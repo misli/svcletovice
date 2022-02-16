@@ -1,4 +1,4 @@
-{% load i18n cms_tags leprikon_tags menu_tags rocketchat sekizai_tags staticfiles ganalytics %}
+{% load i18n cms_tags leprikon_tags menu_tags sekizai_tags staticfiles ganalytics %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="cs-CZ">
 
@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
     <link rel="stylesheet" type="text/css" media="print" href="{% static 'layout/peekaboo/css/print.css' %}" />
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/peekaboo/css/nivo-slider.css' %}"/>
-    <link rel="stylesheet" type="text/css" media="all"   href="{% static 'leprikon/css/chat.css' %}" />
     <link rel="stylesheet" type="text/css" media="all"   href="{% static 'layout/style.css' %}" />
 
     <link rel="stylesheet" id="shadowbox-css-css"    href="{% static 'shadowbox-js/css/shadowbox.css' %}" type="text/css" media="screen" />
@@ -97,7 +96,6 @@
                 {% if request %}
                 <div style="float: right;">{% school_year_form %}</div>
                 <div style="float: right;">{% include 'leprikon/user_dropdown.html' %}</div>
-                <div style="float: right;">{% chat %}</div>
                 {% endif %}
             </div>
             <!-- Search form end -->
@@ -206,10 +204,6 @@
 <!-- End Shadowbox JS -->
 
 {% render_block "js" %}
-
-{% if request %}
-{% livechat %}
-{% endif %}
 
 </body>
 </html>
