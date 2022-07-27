@@ -33,6 +33,7 @@ services:
       - ./wordpress:/app/htdocs/wordpress
       - mysql:/var/run/mysqld
       - redis:/var/run/redis
+    restart: unless-stopped
 
   redis:
     image: redis
@@ -40,6 +41,7 @@ services:
     volumes:
       - ./redis:/data
       - redis:/var/run/redis
+    restart: unless-stopped
 
   mysql:
     image: mariadb
@@ -51,6 +53,7 @@ services:
     volumes:
       - mysql:/var/run/mysqld
       - ./mysql:/var/lib/mysql
+    restart: unless-stopped
 
   smtp:
     image: catatnight/postfix
@@ -61,6 +64,7 @@ services:
     tty: true
     volumes:
       - ./dkim:/etc/opendkim/domainkeys
+    restart: unless-stopped
 
 volumes:
   mysql:
