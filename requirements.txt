@@ -1,10 +1,10 @@
 Whoosh
-aldryn-bootstrap3
-aldryn-search
 cmsplugin-iframe2
 cmsplugin-survey
 django-cms-articles
 django-mailbox
-djangocms-column-fork
 djangocms-video
 leprikon
+git+https://github.com/ChameleonCloud/aldryn-bootstrap3
+git+https://github.com/filipweidemann/aldryn-search
+git+https://github.com/Kinsa/djangocms-column
