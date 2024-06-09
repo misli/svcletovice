@@ -18,7 +18,7 @@
 <!-- start: slideshow -->
 <div class="nivoSlider" id="folder_{{ object.id }}">
     {% for image in folder_images %}
-        <img width="680" height="320" src="{% thumbnail image.file 680x320 crop="True" upscale="True" %}" alt="" title="" />
+        <img width="680" height="320" src="{% thumbnail image.file 680x320 crop upscale subject_location=image.subject_location %}" alt="" title="" />
     {% endfor %}
 </div>
 <!-- end: slideshow -->
