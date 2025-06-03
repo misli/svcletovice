@@ -1,4 +1,3 @@
-version: '3.4'
 services:
 
   leprikon:
@@ -18,14 +17,14 @@ services:
       EMAIL_HOST_USER: svcletovice
       EMAIL_HOST_PASSWORD: emailpassword
       EMAIL_SUBJECT_PREFIX: '[Letokruh]'
-      LEPRIKON_DOMAIN: www.svcletovice.cz
-      LEPRIKON_DOMAIN_ALIASES: 'svcletovice.cz www.svc-letovice.cz svc-letovice.cz www.svcletokruh.cz svcletokruh.cz www.svc-letokruh.cz svc-letokruh.cz www.ddmletovice.cz ddmletovice.cz'
+      #LEPRIKON_DOMAIN: www.svcletovice.cz
+      #LEPRIKON_DOMAIN_ALIASES: 'svcletovice.cz www.svc-letovice.cz svc-letovice.cz www.svcletokruh.cz svcletokruh.cz www.svc-letokruh.cz svc-letokruh.cz www.ddmletovice.cz ddmletovice.cz'
       CACHE_LOCATION: unix:///var/run/redis/redis.sock
       SECRET_KEY: secretkey
       SERVER_EMAIL: '"SVČ Letokruh" <muj-letokruh@svcletovice.cz>'
-    ports:
-      - 80:80
-      - 443:443
+    #ports:
+      #- 80:80
+      #- 443:443
     volumes:
       - ./data:/app/data
       - ./letsencrypt:/etc/letsencrypt
@@ -33,7 +32,6 @@ services:
       - ./wordpress:/app/htdocs/wordpress
       - mysql:/var/run/mysqld
       - redis:/var/run/redis
-    restart: unless-stopped
 
   redis:
     image: redis
@@ -41,10 +39,9 @@ services:
     volumes:
       - ./redis:/data
       - redis:/var/run/redis
-    restart: unless-stopped
 
   mysql:
-    image: mariadb
+    image: mariadb:10
     environment:
       MYSQL_DATABASE: svcletovice
       MYSQL_USER: svcletovice
@@ -53,10 +50,10 @@ services:
     volumes:
       - mysql:/var/run/mysqld
       - ./mysql:/var/lib/mysql
-    restart: unless-stopped
+      - ./conf/my.cnf:/etc/mariadb/my.cnf
 
   smtp:
-    image: catatnight/postfix
+    image: panmourovaty/postfix
     environment:
       maildomain: svcletovice.cz
       smtp_user: svcletovice:emailpassword
@@ -64,7 +61,6 @@ services:
     tty: true
     volumes:
       - ./dkim:/etc/opendkim/domainkeys
-    restart: unless-stopped
 
 volumes:
   mysql:
