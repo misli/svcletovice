@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
-
 from django.utils.translation import ugettext_lazy as _
 from leprikon.site.settings import *
 
 
-SERVER_EMAIL = '"Můj Letokruh" <muj-letokruh@svcletovice.cz>'
+SERVER_EMAIL = '"Můj Letokruh" <svcletovice@leprikon.cz>'
 
 
 # Application definition

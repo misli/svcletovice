@@ -1,37 +1,44 @@
+
+x-leprikon: &leprikon
+  image: misli/svcletovice
+  depends_on:
+    - mysql
+    - redis
+    - smtprelay
+  environment:
+    LEPRIKON_DOMAIN: svcletovice.cz
+    CMSPLUGIN_FILER_MIGRATED: no
+    DATABASE_ENGINE: django.db.backends.mysql
+    DATABASE_HOST: ''
+    DATABASE_NAME: svcletovice
+    DATABASE_USER: svcletovice
+    DATABASE_PASSWORD: dbpassword
+    EMAIL_HOST: smtprelay
+    EMAIL_SUBJECT_PREFIX: '[Letokruh]'
+    CACHE_LOCATION: unix:///var/run/redis/redis.sock
+    SECRET_KEY: secretkey
+    SENTRY_ENVIRONMENT: 'svcletovice'
+    SERVER_EMAIL: '"SVČ Letokruh" <svcletovice@leprikon.cz>'
+    SUPERVISORD_RUN: "gunicorn cron"
+  volumes:
+    - ./data:/app/data
+    - ./media:/app/htdocs/media
+    - ./static:/app/htdocs/static
+    - ./wordpress:/app/htdocs/wordpress
+    - ./run:/app/run
+    - ./svcletovice/settings.py:/app/svcletovice/settings.py
+    - mysql:/var/run/mysqld
+    - redis:/var/run/redis
+
 services:
 
   leprikon:
-    image: misli/svcletovice
+    <<: *leprikon
     build: .
-    depends_on:
-      - mysql
-      - redis
-      - smtp
-    environment:
-      DATABASE_ENGINE: django.db.backends.mysql
-      DATABASE_HOST: ''
-      DATABASE_NAME: svcletovice
-      DATABASE_USER: svcletovice
-      DATABASE_PASSWORD: dbpassword
-      EMAIL_HOST: smtp
-      EMAIL_HOST_USER: svcletovice
-      EMAIL_HOST_PASSWORD: emailpassword
-      EMAIL_SUBJECT_PREFIX: '[Letokruh]'
-      #LEPRIKON_DOMAIN: www.svcletovice.cz
-      #LEPRIKON_DOMAIN_ALIASES: 'svcletovice.cz www.svc-letovice.cz svc-letovice.cz www.svcletokruh.cz svcletokruh.cz www.svc-letokruh.cz svc-letokruh.cz www.ddmletovice.cz ddmletovice.cz'
-      CACHE_LOCATION: unix:///var/run/redis/redis.sock
-      SECRET_KEY: secretkey
-      SERVER_EMAIL: '"SVČ Letokruh" <muj-letokruh@svcletovice.cz>'
-    #ports:
-      #- 80:80
-      #- 443:443
-    volumes:
-      - ./data:/app/data
-      - ./letsencrypt:/etc/letsencrypt
-      - ./media:/app/htdocs/media
-      - ./wordpress:/app/htdocs/wordpress
-      - mysql:/var/run/mysqld
-      - redis:/var/run/redis
+
+  leprikon-collectstatic:
+    <<: *leprikon
+    command: leprikon collectstatic --no-input
 
   redis:
     image: redis
@@ -52,15 +59,14 @@ services:
       - ./mysql:/var/lib/mysql
       - ./conf/my.cnf:/etc/mariadb/my.cnf
 
-  smtp:
-    image: panmourovaty/postfix
+  smtprelay:
+    image: juanluisbaptiste/postfix
     environment:
-      maildomain: svcletovice.cz
-      smtp_user: svcletovice:emailpassword
-    stdin_open: true
-    tty: true
-    volumes:
-      - ./dkim:/etc/opendkim/domainkeys
+      SERVER_HOSTNAME: leprikon.cz
+      SMTP_SERVER: mail.webglobe.cz
+      SMTP_PORT: 465
+      SMTP_USERNAME: svcletovice@leprikon.cz
+      SMTP_PASSWORD: emailpassword
 
 volumes:
   mysql:

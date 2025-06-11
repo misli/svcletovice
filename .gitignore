@@ -8,5 +8,7 @@
 /media
 /mysql*
 /redis*
+/run
+/static
 /uploads
 /wordpress
