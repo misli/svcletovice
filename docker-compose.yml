@@ -22,7 +22,7 @@ x-leprikon: &leprikon
     SUPERVISORD_RUN: "gunicorn cron"
   volumes:
     - ./data:/app/data
-    - ./media:/app/htdocs/media
+    - ../svcspektrum/media:/app/htdocs/media
     - ./static:/app/htdocs/static
     - ./wordpress:/app/htdocs/wordpress
     - ./run:/app/run
