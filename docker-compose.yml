@@ -26,6 +26,8 @@ x-leprikon: &leprikon
     - ./static:/app/htdocs/static
     - ./wordpress:/app/htdocs/wordpress
     - ./run:/app/run
+    - ./svcletovice/static:/app/svcletovice/static
+    - ./svcletovice/templates:/app/svcletovice/templates
     - ./svcletovice/settings.py:/app/svcletovice/settings.py
     - mysql:/var/run/mysqld
     - redis:/var/run/redis
